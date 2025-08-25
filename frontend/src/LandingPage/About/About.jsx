@@ -21,7 +21,7 @@ const About = () => {
               {/* Avatar */}
               <div className="col-md-4 d-flex align-items-center justify-content-center p-4">
                 <img
-  src="/images/photo.png"
+  src="/images/photo1.jpeg"
   alt="Sudeep"
   className="img-fluid rounded-circle"
   style={{
