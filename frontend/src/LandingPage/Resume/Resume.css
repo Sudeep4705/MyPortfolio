@@ -1,0 +1,26 @@
+/* src/pages/Resume.css */
+@page {
+  size: A4;
+  margin: 1cm;
+}
+
+.resume-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+}
+
+@media print {
+  body * { visibility: hidden; }
+  .resume-page, .resume-page * { visibility: visible; }
+  .resume-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+}
+
