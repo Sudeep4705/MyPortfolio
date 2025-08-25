@@ -56,7 +56,7 @@ const Projects = () => {
                 src={p.img}
                 alt={p.title}
                 className="card-img-top"
-                style={{ aspectRatio: '16/9', objectFit: 'cover' }}
+                style={{ aspectRatio: '16/9', objectFit: 'cover',width:'100%' }}
               />
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title fw-bold">{p.title}</h5>

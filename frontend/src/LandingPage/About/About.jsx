@@ -6,7 +6,7 @@ import EmailIcon      from '@mui/icons-material/Email';
 import SchoolIcon     from '@mui/icons-material/School';
 import CodeIcon       from '@mui/icons-material/Code';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-
+import './About.css';
 const About = () => {
   return (
     <section className="container ">

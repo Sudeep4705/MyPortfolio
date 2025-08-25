@@ -24,3 +24,25 @@
   }
 }
 
+
+/* ---------- responsive tweaks ---------- */
+@media (max-width: 768px) {
+  .resume-page .row > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .resume-page .border-start {
+    border-left: none !important;
+    border-top: 1px solid #dee2e6;
+    padding-left: 0 !important;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  /* allow header links to wrap */
+  .resume-page .d-flex.gap-3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,26 @@
+/* ---------- About responsiveness ---------- */
+@media (max-width: 768px) {
+  /* stack avatar & text */
+  .card .row.g-0 {
+    flex-direction: column;
+  }
+
+  /* center avatar */
+  .card .col-md-4 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+
+  /* shrink avatar */
+  .rounded-circle {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  /* education cards full-width on xs */
+  .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
