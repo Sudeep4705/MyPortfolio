@@ -46,3 +46,26 @@
     align-items: flex-start;
   }
 }
+
+@media (max-width: 480px) {
+  /* shrink typography */
+  .resume-page h1 { font-size: 1.75rem; }
+  .resume-page h3 { font-size: 1.25rem; }
+
+  /* tighter spacing */
+  .resume-page .container { padding-left: .75rem; padding-right: .75rem; }
+  .resume-page .mb-4 { margin-bottom: 1.25rem !important; }
+
+  /* stack header contact info even tighter */
+  .resume-page .d-flex.gap-3 {
+    gap: .5rem !important;
+  }
+
+  /* smaller FAB */
+  .btn.d-print-none {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: .8rem;
+    padding: .25rem .5rem;
+  }
+}

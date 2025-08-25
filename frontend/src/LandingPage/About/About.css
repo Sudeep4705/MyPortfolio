@@ -24,3 +24,24 @@
     max-width: 100%;
   }
 }
+
+/* mobile-only tweaks */
+@media (max-width: 576px) {
+  /* hide avatar overflow & shrink */
+  .rounded-circle {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  /* stack avatar + text */
+  .card .row.g-0 { flex-direction: column; }
+  .col-md-4 { padding-bottom: 1rem; }
+
+  /* education & skills full-width */
+  .col-12.col-md-10.col-lg-8 { padding: 0 .75rem; }
+  .col-sm-6 { flex: 0 0 100%; max-width: 100%; }
+
+  /* smaller headings */
+  h1.fw-bold { font-size: 1.75rem; }
+  h3.fw-bold { font-size: 1.25rem; }
+}
