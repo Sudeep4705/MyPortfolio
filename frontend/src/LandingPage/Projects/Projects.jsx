@@ -40,6 +40,13 @@ const Projects = () => {
   desc: 'Backend-first RESTful API and React dashboard for Formula 1 enthusiasts to add, edit, delete and view detailed car specs. Secured with Passport.js authentication.',
   langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
   repo: 'https://github.com/Sudeep4705/Formula1',
+},
+{
+  title: 'Gamers World',
+  img: '/images/gamers.png',
+  desc: 'A React + Node CRUD platform where gamers can create, read, update and delete game records, reviews, and ratings.',
+  langs: [ 'Node.js', 'Express', 'MongoDB',  'Passport.js', 'Bootstrap'],
+  repo: 'https://github.com/Sudeep4705/Gamers-World',
 }
   ];
   // --------------------
