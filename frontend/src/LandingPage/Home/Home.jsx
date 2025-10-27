@@ -9,7 +9,7 @@ import Contact from "../Contact/Contact";
 function Home() {
   return (
     <>
-    <div className="navbar">
+    <div className="navbar bg-black">
 	
 	<div className="navbar-center">
 	<motion.h1 
