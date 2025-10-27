@@ -6,18 +6,21 @@ import ProjectDemo from "../ProjectDemo/ProjectDemo";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
-
 function Home() {
   return (
     <>
     <div className="navbar">
 	
 	<div className="navbar-center">
-		<a className="navbar-item">About</a>
-		<a className="navbar-item">Skills</a>
-		<a className="navbar-item">Projects</a>
-		<a className="navbar-item">Contact</a>
-	</div>
+	<motion.h1 
+		className="text-red-500 text-3xl"
+		initial={{ opacity: 0, y: -25 }}
+		animate={{ opacity: 1, y: 0 }}   
+		transition={{ duration: 0.5 }}    
+	>
+		MyPortfolio
+	</motion.h1>
+</div>
 	
 </div>
       <div
@@ -165,6 +168,7 @@ function Home() {
       <ProjectDemo/>
       <Projects/>
       <Contact/>
+    
      
     </>
   );
