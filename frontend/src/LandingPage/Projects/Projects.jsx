@@ -36,7 +36,7 @@ const projects = [
     title: 'Formula1',
     img: 'Images/formula1.png',
     desc: 'Backend-first RESTful API and React dashboard for Formula 1 enthusiasts to add, edit, delete and view detailed car specs. Secured with Passport.js authentication.',
-    langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
+    langs: ['Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
     repo: 'https://github.com/Sudeep4705/Formula1',
   },
   {

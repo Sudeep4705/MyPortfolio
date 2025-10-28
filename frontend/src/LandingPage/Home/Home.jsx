@@ -10,7 +10,6 @@ function Home() {
   return (
     <>
     <div className="navbar bg-black">
-	
 	<div className="navbar-center">
 	<motion.h1 
 		className="text-red-500 text-3xl"
@@ -43,9 +42,6 @@ function Home() {
          
           }}
         ></div>
-       
-      
-
         {/* Main Box */}
         <div className="flex flex-col md:flex-row justify-evenly items-center text-center box">
           {/* Box1 */}
@@ -161,17 +157,13 @@ function Home() {
           </div>
         </div>
       </div>
-
       <About />
       <Education/>
-       <Skills/>
+      <Skills/>
       <ProjectDemo/>
       <Projects/>
-      <Contact/>
-    
-     
+      <Contact/>   
     </>
   );
 }
-
 export default Home;
