@@ -7,7 +7,7 @@ const educationData = [
   {
     degree: "Master of Computer Application",
     university: "CMR University",
-    cgpa: "CGPA: 8.00",
+    cgpa: "CGPA: 8.23",
     isOpen: true, 
   },
   {
