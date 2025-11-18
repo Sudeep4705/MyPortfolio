@@ -143,7 +143,7 @@ const Projects = () => {
                 className="inline-flex items-center gap-2 text-gray-300 font-semibold transition-colors hover:text-emerald-400"
               >
                 <GitHubIcon fontSize="small" />
-                View Code
+               View on GitHub
               </a>
 
               {/* Live Demo Link */}
