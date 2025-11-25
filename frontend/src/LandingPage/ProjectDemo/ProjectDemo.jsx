@@ -156,6 +156,10 @@ const projectsData = [
     src: "Images/levelup.png",
     alt: "E-learning Platform Project",
   },
+  {
+    src: "Images/foodzo.png",
+    alt: "Food Delivery App",
+  },
 ];
 
 function ProjectDemo() {
