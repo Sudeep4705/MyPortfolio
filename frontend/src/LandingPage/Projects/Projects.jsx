@@ -4,20 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 const projects = [
-  // {
-  //   title: 'Go4Give',
-  //   img: 'Images/go4give.png',
-  //   desc: 'A compassionate MERN platform for donating to orphanages and personal fundraisers. Users can create campaigns, track live progress bars, and complete secure payments via Razorpay integration.',
-  //   langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'JWT', 'Bootstrap'],
-  //   repo: 'https://github.com/Sudeep4705/Go4Give',
-  // },
-  // {
-  //   title: 'Airbnb-Clone',
-  //   img: 'Images/airbnb.png',
-  //   desc: 'Full-stack MERN marketplace where hosts can add, edit, delete hotel listings, upload multiple photos, and manage bookings. search & filters, map view, and an admin dashboard.',
-  //   langs: ['Node.js', 'Express', 'MongoDB', 'Cloudinary', 'Mapbox'],
-  //   repo: 'https://github.com/Sudeep4705/Airbnb',
-  // },
+
   {
     title: 'Go4Give',
     img: 'Images/go4give.png',
@@ -61,7 +48,15 @@ const projects = [
     desc: 'A React + Node CRUD platform where gamers can create, read, update and delete game records, reviews, and ratings.',
     langs: ['Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
     repo: 'https://github.com/Sudeep4705/Gamers-World',
-  }
+  },
+  {
+  title: 'Foodzo',
+  img: 'Images/foodzo.png',
+  desc: 'A MERN + TypeScript full-stack platform with hotel CRUD operations, secure JWT authentication, and a responsive UI with React, Tailwind, and Framer Motion.',
+  langs: ['TypeScript', 'React.js', 'Tailwind', 'Framer Motion', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+  repo: 'https://github.com/Sudeep4705/FoodZo-Assessment.git',
+}
+
 ];
 
 const containerVariants = {
