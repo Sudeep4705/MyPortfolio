@@ -21,6 +21,14 @@ const projects = [
     repo: 'https://github.com/Sudeep4705/Airbnb',
     demo: 'https://airbnb-7r6k.onrender.com/listings',
   },
+{
+  title: 'FitnessHelper',
+  img: 'Images/fitnessHelper.png',
+  desc: 'A smart MERN-based fitness application where users provide personal fitness details, and AI generates a personalized 7-day workout and fitness plan using the Groq AI API. The platform delivers dynamic, responsive UI with smooth animations for an engaging user experience.',
+  langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Groq AI API', 'Framer Motion', 'Tailwind CSS'],
+  repo: 'https://github.com/Sudeep4705/Fitness-Helper-Ai-Assessment.git', 
+  demo: 'https://fit-ness-helper.netlify.app/',
+},
   {
     title: 'LevelUp – Gamer Social Hub',
     img: 'Images/levelup.png',
