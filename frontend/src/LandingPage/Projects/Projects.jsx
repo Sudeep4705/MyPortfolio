@@ -30,6 +30,14 @@ const projects = [
   demo: 'https://fit-ness-helper.netlify.app/',
 },
   {
+  title: 'Foodzo',
+  img: 'Images/foodzo.png',
+  desc: 'A MERN + TypeScript full-stack platform with hotel CRUD operations, secure JWT authentication, and a responsive UI with React, Tailwind, and Framer Motion.',
+  langs: ['TypeScript', 'React.js', 'Tailwind', 'Framer Motion', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+  repo: 'https://github.com/Sudeep4705/FoodZo-Assessment.git',
+   demo: 'https://food-zo.netlify.app/',
+},
+  {
     title: 'LevelUp – Gamer Social Hub',
     img: 'Images/levelup.png',
     desc: 'A gamer hub where users create quests, track achievements, and chat in real-time. Drag-and-drop boards, live updates, and secure auth via Passport.js.',
@@ -57,13 +65,7 @@ const projects = [
     langs: ['Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
     repo: 'https://github.com/Sudeep4705/Gamers-World',
   },
-  {
-  title: 'Foodzo',
-  img: 'Images/foodzo.png',
-  desc: 'A MERN + TypeScript full-stack platform with hotel CRUD operations, secure JWT authentication, and a responsive UI with React, Tailwind, and Framer Motion.',
-  langs: ['TypeScript', 'React.js', 'Tailwind', 'Framer Motion', 'Node.js', 'Express', 'MongoDB', 'JWT'],
-  repo: 'https://github.com/Sudeep4705/FoodZo-Assessment.git',
-}
+
 
 ];
 
