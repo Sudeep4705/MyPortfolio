@@ -160,6 +160,10 @@ const projectsData = [
     src: "Images/foodzo.png",
     alt: "Food Delivery App",
   },
+  {
+    src: "Images/fitnessHelper.png",
+    alt: "fitnessHelper",
+  },
 ];
 
 function ProjectDemo() {
