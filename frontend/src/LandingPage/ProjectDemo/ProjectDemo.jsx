@@ -164,6 +164,10 @@ const projectsData = [
     src: "Images/fitnessHelper.png",
     alt: "fitnessHelper",
   },
+  {
+    src: "Images/zoomclone.png",
+    alt: "zoom",
+  },
 ];
 
 function ProjectDemo() {
