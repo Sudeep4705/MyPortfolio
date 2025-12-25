@@ -29,6 +29,15 @@ const projects = [
   repo: 'https://github.com/Sudeep4705/Fitness-Helper-Ai-Assessment.git', 
   demo: 'https://fit-ness-helper.netlify.app/',
 },
+{
+  title: 'ZoomClone',
+  img: 'Images/zoomClone.png',
+  desc: 'A real-time video conferencing web application inspired by Zoom, where users can connect with each other through secure video and audio calls. The platform supports live screen sharing, enabling seamless collaboration and communication. Built with a modern full-stack architecture to ensure low-latency connections and a smooth, intuitive user experience.',
+  langs: ['React', 'Node.js', 'Express', 'WebRTC', 'Socket.io', 'MongoDB', 'Tailwind CSS'],
+  repo: 'https://github.com/Sudeep4705/ZoomClone.git',
+  demo: 'https://zoom-clo-ne.netlify.app/',
+},
+
   {
   title: 'Foodzo',
   img: 'Images/foodzo.png',
