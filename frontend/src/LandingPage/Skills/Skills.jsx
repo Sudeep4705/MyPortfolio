@@ -227,7 +227,7 @@ function Skills() {
               {/* Icon Card */}
               <motion.div 
                 whileHover={{ y: -8, scale: 1.05 }}
-                className="relative h-28 w-28 flex items-center justify-center rounded-3xl bg-gray-900 border border-gray-800 shadow-xl transition-all duration-300 group-hover:border-emerald-500/50 overflow-hidden"
+                className="relative h-28 w-28 flex items-center justify-center rounded-3xl bg-gray-300 border border-gray-00 shadow-xl transition-all duration-300 group-hover:border-emerald-500/50 overflow-hidden"
               >
                 {/* Background Glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
