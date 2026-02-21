@@ -5,7 +5,6 @@ function UserLayout() {
     <>
       
       <div className="layout">
-        
         <main className="main-content">
            <Outlet/>
         </main>

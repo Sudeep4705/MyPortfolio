@@ -167,7 +167,6 @@ function Skills() {
           initial="hidden"
           animate="visible"
         >
-  
           {skillsData.map((skill, index) => (
             <motion.div
               key={index}
@@ -176,14 +175,11 @@ function Skills() {
               whileHover={{ scale: 1.15, y: -5 }} 
               transition={{ type: 'spring', stiffness: 300 }}
             >
-   
               <span
                 className="absolute -top-10 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-transform duration-200 ease-in-out  text-white text-sm px-3 py-1 ml-5 rounded-md shadow-lg whitespace-nowrap"
               >
                 {skill.name}
               </span>
-
-             
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-100 p-4 shadow-xl backdrop-blur-sm transition-all duration-300 group-hover:bg-emerald-500">
                 {skill.svg}
               </div>

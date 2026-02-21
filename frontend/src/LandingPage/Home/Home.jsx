@@ -9,7 +9,7 @@ import Contact from "../Contact/Contact";
 function Home() {
   return (
     <>
-    <div className="navbar bg-black">
+    {/* <div className="navbar bg-black">
 	<div className="navbar-center">
 	<motion.h1 
 		className="text-red-500 text-3xl"
@@ -21,7 +21,7 @@ function Home() {
 	</motion.h1>
 </div>
 	
-</div>
+</div> */}
       <div
         style={{
           position: "relative",
