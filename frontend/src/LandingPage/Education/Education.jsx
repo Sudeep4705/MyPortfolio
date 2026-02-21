@@ -5,14 +5,12 @@ const educationData = [
   {
     degree: "Master of Computer Application",
     university: "CMR University",
-    details: "Specialized in Full Stack Development and Cloud Computing.",
     cgpa: "8.23",
     year: "2023 - 2025",
   },
   {
     degree: "Bachelor of Computer Application",
     university: "Mangalore University",
-    details: "Foundation in Computer Science, Mathematics, and Programming.",
     cgpa: "7.33",
     year: "2020 - 2023",
   },
@@ -89,7 +87,7 @@ function Education() {
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-6 pt-2 ml-16 border-t border-slate-800/50">
-                      <p className="text-slate-400 leading-relaxed mb-4">{edu.details}</p>
+
                       <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 text-sm font-bold">
                         <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
                         CGPA: {edu.cgpa}
