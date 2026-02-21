@@ -7,6 +7,7 @@ const contactInfo = [
   {
     method: 'Email',
     value: 'sudeep.mern@gmail.com',
+    href: 'mailto:sudeep.mern@gmail.com',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
@@ -24,8 +25,9 @@ const contactInfo = [
     ),
   },
   {
-    method: 'Phone',
+   method: 'Phone',
     value: '+91 7619536101',
+    href: 'tel:+917619536101',
     
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8">
@@ -83,23 +85,33 @@ function Contact() {
           initial="hidden"
           animate="visible"
         >
-          {contactInfo.map((item) => (
-            <motion.a
-              key={item.method}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.05 }}
-              className="group block p-8 bg-gray-800/50 border border-gray-700 rounded-lg text-center transition-all duration-300 hover:border-emerald-500 hover:bg-gray-800"
-            >
-              <div className="flex justify-center items-center h-16 w-16 mx-auto mb-6 rounded-full bg-gray-900 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-bold text-gray-200 mb-2 group-hover:text-white">{item.method}</h3>
-              <p className="text-gray-400 group-hover:text-emerald-300 transition-colors duration-300 break-words">{item.value}</p>
-            </motion.a>
-          ))}
+         {contactInfo.map((item) => {
+  const isExternal = item.href?.startsWith('http');
+
+  return (
+    <motion.a
+      key={item.method}
+      href={item.href}
+      {...(isExternal && {
+        target: "_blank",
+        rel: "noopener noreferrer",
+      })}
+      variants={itemVariants}
+      whileHover={{ y: -5, scale: 1.05 }}
+      className="group block p-8 bg-gray-800/50 border border-gray-700 rounded-lg text-center transition-all duration-300 hover:border-emerald-500 hover:bg-gray-800"
+    >
+      <div className="flex justify-center items-center h-16 w-16 mx-auto mb-6 rounded-full bg-gray-900 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+        {item.icon}
+      </div>
+      <h3 className="text-xl font-bold text-gray-200 mb-2 group-hover:text-white">
+        {item.method}
+      </h3>
+      <p className="text-gray-400 group-hover:text-emerald-300 transition-colors duration-300 break-words">
+        {item.value}
+      </p>
+    </motion.a>
+  );
+})}
         </motion.div>
       </div>
     </section>
