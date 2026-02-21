@@ -1,112 +1,106 @@
-import { motion } from "framer-motion";
-
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const educationData = [
   {
     degree: "Master of Computer Application",
     university: "CMR University",
-    cgpa: "CGPA: 8.23",
-    isOpen: true, 
+    details: "Specialized in Full Stack Development and Cloud Computing.",
+    cgpa: "8.23",
+    year: "2023 - 2025",
   },
   {
     degree: "Bachelor of Computer Application",
     university: "Mangalore University",
-    cgpa: "CGPA: 7.33",
-    isOpen: false,
+    details: "Foundation in Computer Science, Mathematics, and Programming.",
+    cgpa: "7.33",
+    year: "2020 - 2023",
   },
 ];
 
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2, 
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 100 },
-  },
-};
-
 function Education() {
+  const [expandedIndex, setExpandedIndex] = useState(0); // Default open first item
+
   return (
-   
-    <div className="bg-gray-900 text-white py-12 md:py-20">
-      <div className="container mx-auto px-4">
-        <motion.h1 
-          className="text-4xl md:text-5xl font-bold text-center mb-12"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+    <div className="bg-slate-950 text-white py-20 px-6">
+      <div className="max-w-4xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          Education
-        </motion.h1>
+          <h2 className="text-emerald-500 font-mono tracking-widest uppercase text-sm mb-2">My Journey</h2>
+          <h1 className="text-4xl md:text-5xl font-bold">Academic Background</h1>
+        </motion.div>
 
-        <motion.section
-          className="w-full max-w-3xl mx-auto divide-y divide-gray-700 rounded-lg border border-gray-700 bg-gray-800/50"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div className="space-y-4">
           {educationData.map((edu, index) => (
-            <motion.details
-              className="group p-6"
+            <motion.div
               key={index}
-              open={edu.isOpen}
-              variants={itemVariants}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`rounded-2xl border transition-all duration-300 ${
+                expandedIndex === index 
+                  ? "border-emerald-500/50 bg-emerald-500/5 shadow-[0_0_20px_rgba(16,185,129,0.1)]" 
+                  : "border-slate-800 bg-slate-900/50 hover:border-slate-700"
+              }`}
             >
-              <summary className="relative flex cursor-pointer list-none items-center gap-4 pr-8 font-medium text-gray-200 transition-colors duration-300 focus-visible:outline-none group-hover:text-white [&::-webkit-details-marker]:hidden">
-               
-                <svg
-                  className="h-6 w-6 text-emerald-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3.786 9.5 12.786 14l9-4.5-9-4.5-9 4.5zm0 0V17m3-6v6.222c0 .348 2 1.778 6 1.778s6-1.374 6-1.778V11"
-                  />
-                </svg>
-
-                {edu.degree}
-
+              <button
+                onClick={() => setExpandedIndex(expandedIndex === index ? -1 : index)}
+                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+              >
+                <div className="flex items-center gap-5">
+                  <div className={`p-3 rounded-xl transition-colors ${
+                    expandedIndex === index ? "bg-emerald-500 text-white" : "bg-slate-800 text-slate-400"
+                  }`}>
+                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className={`text-xl font-bold ${expandedIndex === index ? "text-emerald-400" : "text-white"}`}>
+                      {edu.degree}
+                    </h3>
+                    <p className="text-slate-400 text-sm font-medium">{edu.university} • {edu.year}</p>
+                  </div>
+                </div>
                 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="absolute right-0 top-1 h-5 w-5 shrink-0 stroke-gray-400 transition duration-300 group-open:rotate-45"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                <motion.div
+                  animate={{ rotate: expandedIndex === index ? 180 : 0 }}
+                  className="text-slate-500"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 4v16m8-8H4"
-                  />
-                </svg>
-              </summary>
-              <div className="mt-4 pl-10 text-gray-400">
-                <p>{edu.university}</p>
-                <p className="mt-2">{edu.cgpa}</p>
-              </div>
-            </motion.details>
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </motion.div>
+              </button>
+
+              <AnimatePresence>
+                {expandedIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 pt-2 ml-16 border-t border-slate-800/50">
+                      <p className="text-slate-400 leading-relaxed mb-4">{edu.details}</p>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 text-sm font-bold">
+                        <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                        CGPA: {edu.cgpa}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
-        </motion.section>
+        </div>
       </div>
     </div>
   );
