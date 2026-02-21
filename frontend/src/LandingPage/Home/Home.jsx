@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import "./Home.css";
 import About from "../About/About";
 import Education from "../Education/Education";
@@ -6,87 +6,151 @@ import ProjectDemo from "../ProjectDemo/ProjectDemo";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
-
-const techStack = [
-  { name: "MongoDB", color: "text-emerald-500", delay: 1 },
-  { name: "NodeJs", color: "text-slate-900", delay: 1.5 },
-  { name: "ExpressJs", color: "text-slate-900", delay: 2 },
-  { name: "ReactJs", color: "text-blue-500", delay: 2.5 },
-];
-
-const floatingVariants = {
-  initial: { opacity: 0, y: 50, rotateY: 90 },
-  animate: (custom) => ({
-    opacity: 1,
-    y: 0,
-    rotateY: 0,
-    transition: {
-      delay: custom,
-      duration: 0.8,
-      ease: [0.6, 0.05, -0.01, 0.9], 
-    },
-  }),
-};
-
 function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <div className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-gray-100">
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url("/Images/Hero1.png")' }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/20" />
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-10 container mx-auto px-6 flex flex-col md:flex-row justify-between items-center h-full pt-20">
-          
-          {/* Left Side Stack */}
-          <div className="flex flex-col gap-6 text-center md:text-left">
-            {techStack.slice(0, 2).map((tech) => (
-              <motion.h2
-                key={tech.name}
-                custom={tech.delay}
-                variants={floatingVariants}
-                initial="initial"
-                animate="animate"
-                className={`text-5xl md:text-7xl font-black uppercase tracking-tighter ${tech.color}`}
-              >
-                {tech.name}
-              </motion.h2>
-            ))}
+      <div
+        style={{
+          position: "relative",
+          backgroundImage: 'url("/Images/Hero1.png")',
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          height: "100vh",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            height: "80vh",
+            width: "100%",
+            zIndex: 1,
+         
+          }}
+        ></div>
+        {/* Main Box */}
+        <div className="flex flex-col md:flex-row justify-evenly items-center text-center box">
+          {/* Box1 */}
+          <div className="md:mt-90">
+            <motion.p
+              style={{
+                position: "relative",
+                zIndex: 2,
+                color: "red",
+                top: "50%",
+              }}
+              className="text-3xl sm:text-4xl m-4"
+              initial={{
+                opacity: 0,
+                y: 50,
+                rotateY: 90,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                rotateY: 0,
+              }}
+              transition={{
+                delay: 1,
+                duration: 0.2,
+                ease: "easeOut",
+              }}
+            >
+              MongoDB
+            </motion.p>
+            <motion.p
+              style={{
+                position: "relative",
+                zIndex: 2,
+                color: "black",
+                top: "50%",
+              }}
+              className="text-3xl sm:text-4xl m-4"
+              initial={{
+                opacity: 0,
+                y: 50,
+                rotateY: 90,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                rotateY: 0,
+              }}
+              transition={{
+                delay: 2,
+                duration: 0.2,
+                ease: "easeOut",
+              }}
+            >
+              NodeJs
+            </motion.p>
           </div>
 
-          {/* Right Side Stack */}
-          <div className="flex flex-col gap-6 text-center md:text-right mt-12 md:mt-0">
-            {techStack.slice(2).map((tech) => (
-              <motion.h2
-                key={tech.name}
-                custom={tech.delay}
-                variants={floatingVariants}
-                initial="initial"
-                animate="animate"
-                className={`text-5xl md:text-7xl font-black uppercase tracking-tighter ${tech.color}`}
-              >
-                {tech.name}
-              </motion.h2>
-            ))}
+          {/* Box2 */}
+          <div className="md:mt-90">
+            <motion.p
+              style={{
+                position: "relative",
+                zIndex: 2,
+                color: "black",
+                top: "50%",
+              }}
+              className="text-3xl sm:text-4xl m-4"
+              initial={{
+                opacity: 0,
+                y: 50,
+                rotateY: 90,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                rotateY: 0,
+              }}
+              transition={{
+                delay: 3,
+                duration: 0.2,
+                ease: "easeOut",
+              }}
+            >
+              ExpressJs
+            </motion.p>
+            <motion.p
+              style={{
+                position: "relative",
+                zIndex: 2,
+                color: "red",
+                top: "50%",
+              }} 
+              className="text-3xl sm:text-4xl m-4"
+              initial={{
+                opacity: 0,
+                y: 50,
+                rotateY: 90,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                rotateY: 0,
+              }}
+              transition={{
+                delay: 4,
+                duration: 0.2,
+                ease: "easeOut",
+              }}
+            >
+              ReactJs
+            </motion.p>
           </div>
         </div>
       </div>
-
-      {/* Page Sections */}
       <About />
-      <Education />
-      <Skills />
-      <ProjectDemo />
-      <Projects />
-      <Contact />
+      <Education/>
+      <Skills/>
+      <ProjectDemo/>
+      <Projects/>
+      <Contact/>   
     </>
   );
 }
-
 export default Home;
