@@ -46,6 +46,14 @@ const projects = [
   repo: 'https://github.com/Sudeep4705/FoodZo-Assessment.git',
    demo: 'https://food-zo.netlify.app/',
 },
+{
+  title: 'Golf Charity Lottery Platform',
+  img: 'Images/golfgives.png',
+  desc: 'A MERN full-stack platform where users submit golf scores to participate in lottery-based prize draws while contributing to charities. Features rolling score tracking, prize pool distribution logic, and a charity donation system with user-defined percentages.',
+  langs: ['JavaScript', 'React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
+  repo: 'https://github.com/Sudeep4705/golf-gives-platform',
+  demo: 'https://golf-gives-platform.netlify.app/'
+},
   {
     title: 'LevelUp – Gamer Social Hub',
     img: 'Images/levelup.png',
