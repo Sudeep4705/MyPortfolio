@@ -21,13 +21,13 @@ const projects = [
     repo: 'https://github.com/Sudeep4705/Airbnb',
     demo: 'https://airbnb-7r6k.onrender.com/listings',
   },
-{
-  title: 'FitnessHelper',
-  img: 'Images/fitnessHelper.png',
-  desc: 'A smart MERN-based fitness application where users provide personal fitness details, and AI generates a personalized 7-day workout and fitness plan using the Groq AI API. The platform delivers dynamic, responsive UI with smooth animations for an engaging user experience.',
-  langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Groq AI API', 'Framer Motion', 'Tailwind CSS'],
-  repo: 'https://github.com/Sudeep4705/Fitness-Helper-Ai-Assessment.git', 
-  demo: 'https://fit-ness-helper.netlify.app/',
+  {
+  title: 'Golf Charity Lottery Platform',
+  img: 'Images/golfgives.png',
+  desc: 'A MERN full-stack platform where users submit golf scores to participate in lottery-based prize draws while contributing to charities. Features rolling score tracking, prize pool distribution logic, and a charity donation system with user-defined percentages.',
+  langs: ['JavaScript', 'React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
+  repo: 'https://github.com/Sudeep4705/golf-gives-platform',
+  demo: 'https://golf-gives-platform.netlify.app/'
 },
 {
   title: 'ZoomClone',
@@ -37,6 +37,15 @@ const projects = [
   repo: 'https://github.com/Sudeep4705/ZoomClone.git',
   demo: 'https://zoom-clo-ne.netlify.app/',
 },
+{
+  title: 'FitnessHelper',
+  img: 'Images/fitnessHelper.png',
+  desc: 'A smart MERN-based fitness application where users provide personal fitness details, and AI generates a personalized 7-day workout and fitness plan using the Groq AI API. The platform delivers dynamic, responsive UI with smooth animations for an engaging user experience.',
+  langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Groq AI API', 'Framer Motion', 'Tailwind CSS'],
+  repo: 'https://github.com/Sudeep4705/Fitness-Helper-Ai-Assessment.git', 
+  demo: 'https://fit-ness-helper.netlify.app/',
+},
+
 
   {
   title: 'Foodzo',
@@ -46,14 +55,7 @@ const projects = [
   repo: 'https://github.com/Sudeep4705/FoodZo-Assessment.git',
    demo: 'https://food-zo.netlify.app/',
 },
-{
-  title: 'Golf Charity Lottery Platform',
-  img: 'Images/golfgives.png',
-  desc: 'A MERN full-stack platform where users submit golf scores to participate in lottery-based prize draws while contributing to charities. Features rolling score tracking, prize pool distribution logic, and a charity donation system with user-defined percentages.',
-  langs: ['JavaScript', 'React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
-  repo: 'https://github.com/Sudeep4705/golf-gives-platform',
-  demo: 'https://golf-gives-platform.netlify.app/'
-},
+
   {
     title: 'LevelUp – Gamer Social Hub',
     img: 'Images/levelup.png',
