@@ -153,6 +153,10 @@ const projectsData = [
     alt: "Charity Website Project",
   },
   {
+    src: "Images/golfgives.png",
+    alt: "Golf Charity Lottery Platform",
+  },
+  {
     src: "Images/levelup.png",
     alt: "E-learning Platform Project",
   },
