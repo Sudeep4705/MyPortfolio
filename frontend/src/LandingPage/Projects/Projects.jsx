@@ -21,6 +21,13 @@ const projects = [
   repo: 'https://github.com/Sudeep4705/SentinalAi',
   demo: 'https://senti-nal-ai.netlify.app/',
   
+},{
+  title: 'MediNova',
+  img: 'Images/medinova.png',
+  desc: 'An AI-powered medical research assistant that fetches trusted research papers, clinical trials, and generates simplified health insights through intelligent summarization.',
+  langs: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Groq API', 'PubMed API', 'OpenAlex API', 'Tailwind CSS'],
+  repo: 'https://github.com/Sudeep4705/Curalink',
+  demo: 'https://curalink-rust.vercel.app/',
 },
   {
     title: 'Airbnb-Clone',

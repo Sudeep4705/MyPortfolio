@@ -157,6 +157,10 @@ const projectsData = [
     alt: "Charity Website Project",
   },
   {
+    src: "Images/medinova.png",
+    alt: "Medinova",
+  },
+  {
     src: "Images/golfgives.png",
     alt: "Golf Charity Lottery Platform",
   },
