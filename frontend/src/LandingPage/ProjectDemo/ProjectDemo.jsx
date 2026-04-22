@@ -141,6 +141,10 @@ const projectsData = [
     alt: "Airbnb Clone Project",
   },
   {
+    src: "Images/sentinalai.png",
+    alt: "SentinalAi",
+  },
+  {
     src: "Images/formula1.png",
     alt: "Formula 1 Website Project",
   },

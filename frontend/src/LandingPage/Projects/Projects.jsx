@@ -14,6 +14,15 @@ const projects = [
     demo: 'https://go4give.netlify.app/',
   },
   {
+  title: 'Sentinal AI',
+  img: 'Images/sentinalai.png',
+  desc: 'An AI-powered security monitoring dashboard that analyzes real-time events, detects suspicious activity, visualizes movement on maps, and generates smart incident summaries.',
+  langs: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Groq API', 'Leaflet.js', 'Tailwind CSS'],
+  repo: 'https://github.com/Sudeep4705/SentinalAi',
+  demo: 'https://senti-nal-ai.netlify.app/',
+  
+},
+  {
     title: 'Airbnb-Clone',
     img: 'Images/airbnb.png',
     desc: 'Full-stack MERN marketplace where hosts can add, edit, delete hotel listings, upload multiple photos, and manage bookings. search & filters, map view, and an admin dashboard.',
