@@ -20,8 +20,7 @@ const projects = [
   langs: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Groq API', 'Leaflet.js', 'Tailwind CSS'],
   repo: 'https://github.com/Sudeep4705/SentinalAi',
   demo: 'https://senti-nal-ai.netlify.app/',
-  
-},{
+  },{
   title: 'MediNova',
   img: 'Images/medinova.png',
   desc: 'An AI-powered medical research assistant that fetches trusted research papers, clinical trials, and generates simplified health insights through intelligent summarization.',
@@ -52,6 +51,14 @@ const projects = [
   langs: ['React', 'Node.js', 'Express', 'WebRTC', 'Socket.io', 'MongoDB', 'Tailwind CSS'],
   repo: 'https://github.com/Sudeep4705/ZoomClone.git',
   demo: 'https://zoom-clo-ne.netlify.app/',
+},
+{
+  title: 'SkillBridge',
+  img: 'Images/skillbridge.png',
+  desc: 'A role-based learning management system designed to manage batches, sessions, students, and attendance efficiently. The platform supports multiple user roles including Institution, Trainer, Student, Programme Manager, and Monitoring Officer with secure authentication and role-based access control. Built with a full-stack MERN architecture to provide a smooth and scalable user experience.',
+  langs: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Tailwind CSS', 'Axios'],
+  repo: 'https://github.com/Sudeep4705/SkillBridge.git',
+  demo: 'https://skill-bri-dge.netlify.app/',
 },
 {
   title: 'FitnessHelper',

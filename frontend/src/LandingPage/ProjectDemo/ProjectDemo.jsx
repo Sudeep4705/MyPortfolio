@@ -145,6 +145,10 @@ const projectsData = [
     alt: "SentinalAi",
   },
   {
+    src: "Images/skillbridge.png",
+    alt: "skillbridge",
+  },
+  {
     src: "Images/formula1.png",
     alt: "Formula 1 Website Project",
   },
