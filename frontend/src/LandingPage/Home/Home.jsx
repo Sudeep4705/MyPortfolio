@@ -6,6 +6,7 @@ import ProjectDemo from "../ProjectDemo/ProjectDemo";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
+import Achievements from "../Achivements/Achivement";
 function Home() {
   return (
     <>
@@ -149,6 +150,7 @@ function Home() {
       <Skills/>
       <ProjectDemo/>
       <Projects/>
+      <Achievements/>
       <Contact/>   
     </>
   );
