@@ -6,7 +6,7 @@ const educationData = [
     degree: "Master of Computer Application",
     university: "CMR University",
     cgpa: "8.23",
-    year: "2023 - 2025",
+    year: "2024 - 2026",
   },
   {
     degree: "Bachelor of Computer Application",
