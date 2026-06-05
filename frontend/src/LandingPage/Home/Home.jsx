@@ -75,7 +75,7 @@ function Home() {
 
         {/* Social Navbar - Top Right */}
         <motion.div
-          className="absolute top-10 right-8 z-50 flex flex-col items-center gap-6"
+          className="absolute top-13 right-8 z-50 flex flex-col items-center gap-6"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
