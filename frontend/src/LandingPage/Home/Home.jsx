@@ -92,7 +92,7 @@ function Home() {
                 rel="noopener noreferrer"
                 className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white cursor-pointer transition-all duration-300 hover:bg-yellow-400/15 hover:border-yellow-400/50 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(255,255,0,0.4),inset_0_0_20px_rgba(255,255,0,0.1)] group"
                 variants={itemVariants}
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileHover={{ scale: 1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
                 title={link.name}
               >
