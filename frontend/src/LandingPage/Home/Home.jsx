@@ -69,51 +69,6 @@ function Home() {
 
   return (
     <>
-      {/* Social Navbar */}
-      <motion.div
-        className="fixed right-8 top-1/2 -translate-y-1/2 z-100 flex flex-col items-center gap-8 md:right-4 md:bottom-8 md:top-auto md:translate-y-0"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div
-          className="flex flex-col gap-6 items-center md:flex-row md:gap-4"
-          variants={containerVariants}
-        >
-          {socialLinks.map((link) => (
-            <motion.a
-              key={link.id}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white cursor-pointer transition-all duration-300 hover:bg-yellow-400/15 hover:border-yellow-400/50 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(255,255,0,0.4),inset_0_0_20px_rgba(255,255,0,0.1)] group md:w-11 md:h-11 sm:w-10 sm:h-10"
-              variants={itemVariants}
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.95 }}
-              title={link.name}
-            >
-              <div className="flex items-center justify-center w-full h-full group-hover:scale-120 transition-transform duration-300">
-                {link.icon}
-              </div>
-              {/* Tooltip */}
-              <div className="absolute right-20 hidden group-hover:block bg-black/80 text-yellow-400 px-3 py-2 rounded text-xs whitespace-nowrap pointer-events-none z-10 md:right-16">
-                {link.name}
-                <div className="absolute left-full top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-black/80 clip-path-triangle"></div>
-              </div>
-            </motion.a>
-          ))}
-        </motion.div>
-
-        {/* Divider Line */}
-        <motion.div
-          className="w-0.5 h-32 bg-gradient-to-b from-yellow-400/50 via-white/20 to-yellow-400/50 rounded-full md:w-32 md:h-0.5 md:mt-4"
-          initial={{ scaleY: 0 }}
-          animate={{ scaleY: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-        />
-      </motion.div>
-
-      {/* Hero Section */}
       <div
         style={{
           position: "relative",
@@ -133,8 +88,53 @@ function Home() {
             zIndex: 1,
           }}
         ></div>
+
+        {/* Social Navbar - Top Right */}
+        <motion.div
+          className="absolute top-8 right-8 z-50 flex flex-col items-center gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div
+            className="flex flex-row gap-4 items-center"
+            variants={containerVariants}
+          >
+            {socialLinks.map((link) => (
+              <motion.a
+                key={link.id}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white cursor-pointer transition-all duration-300 hover:bg-yellow-400/15 hover:border-yellow-400/50 hover:text-yellow-400 hover:shadow-[0_0_20px_rgba(255,255,0,0.4),inset_0_0_20px_rgba(255,255,0,0.1)] group"
+                variants={itemVariants}
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                title={link.name}
+              >
+                <div className="flex items-center justify-center w-full h-full transition-transform duration-300">
+                  {link.icon}
+                </div>
+                {/* Tooltip */}
+                <div className="absolute bottom-full mb-3 hidden group-hover:block bg-black/80 text-yellow-400 px-3 py-2 rounded text-xs whitespace-nowrap pointer-events-none z-10">
+                  {link.name}
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-black/80 clip-path-triangle"></div>
+                </div>
+              </motion.a>
+            ))}
+          </motion.div>
+
+          {/* Horizontal Divider Line */}
+          <motion.div
+            className="w-20 h-0.5 bg-gradient-to-r from-yellow-400/50 via-white/20 to-yellow-400/50 rounded-full"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          />
+        </motion.div>
+
         {/* Main Box */}
-        <div className="flex flex-col md:flex-row justify-evenly items-center text-center box">
+        <div className="flex flex-col md:flex-row justify-evenly items-center text-center box relative z-10">
           {/* Box1 */}
           <div className="md:mt-90">
             <motion.p
