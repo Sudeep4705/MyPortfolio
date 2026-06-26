@@ -157,6 +157,10 @@ const projectsData = [
     alt: "Gamers Community Project",
   },
   {
+    src: "Images/nexus.png",
+    alt: "Gamers Community Project",
+  },
+  {
     src: "Images/go4give.png",
     alt: "Charity Website Project",
   },

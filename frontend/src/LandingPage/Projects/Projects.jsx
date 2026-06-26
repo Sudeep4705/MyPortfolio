@@ -14,6 +14,14 @@ const projects = [
     demo: 'https://go4give.netlify.app/',
   },
   {
+  "title": "Nexus - AI RAG Chatbot",
+  "img": "Images/nexus.png",
+  "desc": "A full-stack RAG chatbot that enables users to query any documents (PDFs/Excel) with AI-powered retrieval, chat history, and web search.",
+  "langs": ["React.js", "Node.js", "Express.js", "PostgreSQL", "Qdrant", "Voyage AI", "Groq API", "Tailwind CSS"],
+  "repo": "https://github.com/Sudeep4705/Nexus",
+  "demo": "https://nexus-gules-rho.vercel.app/"
+},
+  {
   title: 'Sentinal AI',
   img: 'Images/sentinalai.png',
   desc: 'An AI-powered security monitoring dashboard that analyzes real-time events, detects suspicious activity, visualizes movement on maps, and generates smart incident summaries.',
