@@ -137,55 +137,55 @@ import { motion } from "framer-motion";
 
 const projectsData = [
   {
-    src: "Images/airbnb.png",
+    src: "/Images/airbnb.png",
     alt: "Airbnb Clone Project",
   },
   {
-    src: "Images/sentinalai.png",
+    src: "/Images/sentinalai.png",
     alt: "SentinalAi",
   },
   {
-    src: "Images/skillbridge.png",
+    src: "/Images/skillbridge.png",
     alt: "skillbridge",
   },
   {
-    src: "Images/formula1.png",
+    src: "/Images/formula1.png",
     alt: "Formula 1 Website Project",
   },
   {
-    src: "Images/gamers.png",
+    src: "/Images/gamers.png",
     alt: "Gamers Community Project",
   },
   {
-    src: "Images/nexus.png",
+    src: "/Images/nexus.png",
     alt: "Gamers Community Project",
   },
   {
-    src: "Images/go4give.png",
+    src: "/Images/go4give.png",
     alt: "Charity Website Project",
   },
   {
-    src: "Images/medinova.png",
+    src: "/Images/medinova.png",
     alt: "Medinova",
   },
   {
-    src: "Images/golfgives.png",
+    src: "/Images/golfgives.png",
     alt: "Golf Charity Lottery Platform",
   },
   {
-    src: "Images/levelup.png",
+    src: "/Images/levelup.png",
     alt: "E-learning Platform Project",
   },
   {
-    src: "Images/foodzo.png",
+    src: "/Images/foodzo.png",
     alt: "Food Delivery App",
   },
   {
-    src: "Images/fitnessHelper.png",
+    src: "/Images/fitnessHelper.png",
     alt: "fitnessHelper",
   },
   {
-    src: "Images/zoomclone.png",
+    src: "/Images/zoomclone.png",
     alt: "zoom",
   },
 ];

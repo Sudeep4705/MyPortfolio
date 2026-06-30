@@ -7,7 +7,7 @@ const projects = [
 
   {
     title: 'Go4Give',
-    img: 'Images/go4give.png',
+    img: '/Images/go4give.png',
     desc: 'A compassionate MERN platform for donating to orphanages and personal fundraisers. Users can create campaigns, track live progress bars, and complete secure payments via Razorpay integration.',
     langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'JWT', 'Bootstrap'],
     repo: 'https://github.com/Sudeep4705/Go4Give',
@@ -15,7 +15,7 @@ const projects = [
   },
   {
   "title": "Nexus - AI RAG Chatbot",
-  "img": "Images/nexus.png",
+  "img": "/Images/nexus.png",
   "desc": "A full-stack RAG chatbot that enables users to query any documents (PDFs/Excel) with AI-powered retrieval, chat history, and web search.",
   "langs": ["React.js", "Node.js", "Express.js", "PostgreSQL", "Qdrant", "Voyage AI", "Groq API", "Tailwind CSS"],
   "repo": "https://github.com/Sudeep4705/Nexus",
@@ -23,14 +23,14 @@ const projects = [
 },
   {
   title: 'Sentinal AI',
-  img: 'Images/sentinalai.png',
+  img: '/Images/sentinalai.png',
   desc: 'An AI-powered security monitoring dashboard that analyzes real-time events, detects suspicious activity, visualizes movement on maps, and generates smart incident summaries.',
   langs: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Groq API', 'Leaflet.js', 'Tailwind CSS'],
   repo: 'https://github.com/Sudeep4705/SentinalAi',
   demo: 'https://senti-nal-ai.netlify.app/',
   },{
   title: 'MediNova',
-  img: 'Images/medinova.png',
+  img: '/Images/medinova.png',
   desc: 'An AI-powered medical research assistant that fetches trusted research papers, clinical trials, and generates simplified health insights through intelligent summarization.',
   langs: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Groq API', 'PubMed API', 'OpenAlex API', 'Tailwind CSS'],
   repo: 'https://github.com/Sudeep4705/Curalink',
@@ -38,7 +38,7 @@ const projects = [
 },
   {
     title: 'Airbnb-Clone',
-    img: 'Images/airbnb.png',
+    img: '/Images/airbnb.png',
     desc: 'Full-stack MERN marketplace where hosts can add, edit, delete hotel listings, upload multiple photos, and manage bookings. search & filters, map view, and an admin dashboard.',
     langs: ['Node.js', 'Express', 'MongoDB', 'Cloudinary', 'Mapbox'],
     repo: 'https://github.com/Sudeep4705/Airbnb',
@@ -46,7 +46,7 @@ const projects = [
   },
   {
   title: 'Golf Charity Lottery Platform',
-  img: 'Images/golfgives.png',
+  img: '/Images/golfgives.png',
   desc: 'A MERN full-stack platform where users submit golf scores to participate in lottery-based prize draws while contributing to charities. Features rolling score tracking, prize pool distribution logic, and a charity donation system with user-defined percentages.',
   langs: ['JavaScript', 'React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
   repo: 'https://github.com/Sudeep4705/golf-gives-platform',
@@ -54,7 +54,7 @@ const projects = [
 },
 {
   title: 'ZoomClone',
-  img: 'Images/zoomclone.png',
+  img: '/Images/zoomclone.png',
   desc: 'A real-time video conferencing web application inspired by Zoom, where users can connect with each other through secure video and audio calls. The platform supports live screen sharing, enabling seamless collaboration and communication. Built with a modern full-stack architecture to ensure low-latency connections and a smooth, intuitive user experience.',
   langs: ['React', 'Node.js', 'Express', 'WebRTC', 'Socket.io', 'MongoDB', 'Tailwind CSS'],
   repo: 'https://github.com/Sudeep4705/ZoomClone.git',
@@ -62,7 +62,7 @@ const projects = [
 },
 {
   title: 'SkillBridge',
-  img: 'Images/skillbridge.png',
+  img: '/Images/skillbridge.png',
   desc: 'A role-based learning management system designed to manage batches, sessions, students, and attendance efficiently. The platform supports multiple user roles including Institution, Trainer, Student, Programme Manager, and Monitoring Officer with secure authentication and role-based access control. Built with a full-stack MERN architecture to provide a smooth and scalable user experience.',
   langs: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Tailwind CSS', 'Axios'],
   repo: 'https://github.com/Sudeep4705/SkillBridge.git',
@@ -80,7 +80,7 @@ const projects = [
 
   {
   title: 'Foodzo',
-  img: 'Images/foodzo.png',
+  img: '/Images/foodzo.png',
   desc: 'A MERN + TypeScript full-stack platform with hotel CRUD operations, secure JWT authentication, and a responsive UI with React, Tailwind, and Framer Motion.',
   langs: ['TypeScript', 'React.js', 'Tailwind', 'Framer Motion', 'Node.js', 'Express', 'MongoDB', 'JWT'],
   repo: 'https://github.com/Sudeep4705/FoodZo-Assessment.git',
@@ -89,28 +89,28 @@ const projects = [
 
   {
     title: 'LevelUp – Gamer Social Hub',
-    img: 'Images/levelup.png',
+    img: '/Images/levelup.png',
     desc: 'A gamer hub where users create quests, track achievements, and chat in real-time. Drag-and-drop boards, live updates, and secure auth via Passport.js.',
     langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Bootstrap', 'Passport.js'],
     repo: 'https://github.com/Sudeep4705/Levelup',
   },
   {
     title: 'Zerodha-Clone',
-    img: 'Images/zerodha.png',
+    img: '/Images/zerodha.png',
     desc: 'Full-stack stock-trading platform clone featuring live price feeds, portfolio dashboard, buy/sell orders, holdings & funds pages, and secure JWT authentication.',
     langs: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Bootstrap'],
     repo: 'https://github.com/Sudeep4705/Zerodha',
   },
   {
     title: 'Formula1',
-    img: 'Images/formula1.png',
+    img: '/Images/formula1.png',
     desc: 'Backend-first RESTful API and React dashboard for Formula 1 enthusiasts to add, edit, delete and view detailed car specs. Secured with Passport.js authentication.',
     langs: ['Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
     repo: 'https://github.com/Sudeep4705/Formula1',
   },
   {
     title: 'Gamers World',
-    img: 'Images/gamers.png',
+    img: '/Images/gamers.png',
     desc: 'A React + Node CRUD platform where gamers can create, read, update and delete game records, reviews, and ratings.',
     langs: ['Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
     repo: 'https://github.com/Sudeep4705/Gamers-World',
