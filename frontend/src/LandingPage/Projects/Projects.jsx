@@ -45,6 +45,14 @@ const projects = [
     demo: 'https://airbnb-7r6k.onrender.com/listings',
   },
   {
+  title: 'AI Customer Support Agent',
+  img: '/Images/customeragent.png',
+  desc: 'AI-powered customer support agent using RAG to classify customer intents, retrieve the top 10 similar historical conversations from Qdrant, and generate helpful responses using Groq LLM. Includes human escalation guidance and a deployed chat interface.',
+  langs: ['React', 'Node.js', 'Express', 'Qdrant', 'Voyage AI', 'Groq', 'Tailwind CSS'],
+  repo: 'https://github.com/Sudeep4705/ai-customer-support-agent',
+  demo: 'https://ai-customer-support-agent-ruddy.vercel.app/',
+},
+  {
   title: 'Golf Charity Lottery Platform',
   img: '/Images/golfgives.png',
   desc: 'A MERN full-stack platform where users submit golf scores to participate in lottery-based prize draws while contributing to charities. Features rolling score tracking, prize pool distribution logic, and a charity donation system with user-defined percentages.',
