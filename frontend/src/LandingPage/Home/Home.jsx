@@ -59,19 +59,22 @@ function Home() {
         className="relative flex min-h-screen flex-col overflow-hidden bg-[#dfe0e3] px-6 pb-10 pt-24 text-slate-900 sm:px-10"
       >
         {/* Face as the background */}
+     
+        {/* Centered, Larger Hero Portrait */}
         <motion.div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-[60%]"
-          initial={{ opacity: 0, scale: 1.03 }}
+          className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-full items-center justify-center md:w-[55%]"
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: "easeOut" }}
         >
           <img
             src={HERO_IMAGE}
             alt=""
-            className="h-full w-full object-cover object-[50%_20%] opacity-40 mix-blend-multiply md:opacity-100 [mask-image:linear-gradient(to_left,black_55%,transparent_100%)]"
+            className="h-[70%] w-auto max-w-none object-contain object-center opacity-40 mix-blend-multiply sm:h-[78%] md:h-[85%] md:opacity-100"
           />
         </motion.div>
+
 
         {/* Bottom fade */}
         <div
