@@ -75,11 +75,11 @@ function Home() {
   animate={{ opacity: 1, scale: 1 }}
   transition={{ duration: 1.1, ease: "easeOut" }}
 >
-  <img
-    src={HERO_IMAGE}
-    alt=""
-    className="relative h-[85%] w-auto max-w-none object-contain object-bottom sm:h-[95%] md:h-[110%] md:translate-y-[-10%]"
-  />
+ <img
+  src={HERO_IMAGE}
+  alt=""
+  className="relative h-[85%] w-auto max-w-none object-contain object-bottom sm:h-[95%] md:h-[120%] md:translate-y-[-14%]"
+/>
 
   {/* Soften the edges of the portrait area */}
   <div
