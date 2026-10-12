@@ -236,7 +236,7 @@ function Home() {
       <About />
       {/* <Education /> */}
       <Skills />
-      <ProjectDemo />
+      {/* <ProjectDemo /> */}
       <Projects />
       <Achievements />
       <Contact />
