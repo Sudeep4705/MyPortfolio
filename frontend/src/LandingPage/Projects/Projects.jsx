@@ -47,7 +47,7 @@ const projects = [
   {
   title: 'AI Customer Support Agent',
   img: '/Images/customeragent.png',
-  desc: 'AI-powered customer support agent using RAG to classify customer intents, retrieve the top 10 similar historical conversations from Qdrant, and generate helpful responses using Groq LLM. Includes human escalation guidance and a deployed chat interface.',
+ desc: 'Built an Amazon-specific AI customer support agent using RAG to classify customer issues into 20 intents, retrieve the top 10 similar historical AmazonHelp conversations from Qdrant, and generate contextual support responses using Groq LLM. Includes human escalation guidance and a deployed chat interface.',
   langs: ['React', 'Node.js', 'Express', 'Qdrant', 'Voyage AI', 'Groq', 'Tailwind CSS'],
   repo: 'https://github.com/Sudeep4705/ai-customer-support-agent',
   demo: 'https://ai-customer-support-agent-ruddy.vercel.app/',
