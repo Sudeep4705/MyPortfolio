@@ -63,9 +63,11 @@ function Home() {
         {/* Centered, Larger Hero Portrait */}
       
 {/* Centered, Larger Hero Portrait */}
+
+{/* Larger portrait positioned higher */}
 <motion.div
   aria-hidden="true"
-  className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-full items-center justify-center overflow-hidden md:w-[55%]"
+  className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-full items-end justify-center overflow-hidden md:w-[55%]"
   initial={{ opacity: 0, scale: 0.95 }}
   animate={{ opacity: 1, scale: 1 }}
   transition={{ duration: 1.1, ease: "easeOut" }}
@@ -73,11 +75,9 @@ function Home() {
   <img
     src={HERO_IMAGE}
     alt=""
-    className="h-[90%] w-auto max-w-none object-contain object-center opacity-40 mix-blend-multiply sm:h-[100%] md:h-[115%] md:translate-y-[-7%] md:opacity-100"
+    className="relative bottom-0 h-[85%] w-auto max-w-none object-contain object-bottom opacity-40 mix-blend-multiply sm:h-[95%] md:h-[115%] md:translate-y-[-18%] md:opacity-100"
   />
 </motion.div>
-
-
 
         {/* Bottom fade */}
         <div
