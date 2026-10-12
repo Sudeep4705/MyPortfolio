@@ -1,10 +1,11 @@
+
 import { motion, MotionConfig } from "motion/react";
 import About from "../About/About";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 
-// Put your original photo at: public/sudeep.png
+// Place your image in public/Images/Hero1-clean.png
 const HERO_IMAGE = "/Images/Hero1-clean.png";
 
 const socialLinks = [
@@ -13,7 +14,12 @@ const socialLinks = [
     name: "GitHub",
     url: "https://github.com/Sudeep4705",
     icon: (
-      <svg role="img" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
         <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
       </svg>
     ),
@@ -34,21 +40,53 @@ const socialLinks = [
 ];
 
 const stack = [
-  { name: "React.js", role: "What people see and click", color: "#0ea5e9" },
-  { name: "Express.js", role: "Routes and API logic", color: "#374151" },
-  { name: "Node.js", role: "Runs the server", color: "#16a34a" },
-  { name: "AI agents", role: "Chatbots and agentic AI in JavaScript", color: "#7c3aed" },
-  { name: "MongoDB", role: "Stores the data", color: "#15803d" },
+  {
+    name: "React.js",
+    role: "What people see and click",
+    color: "#0ea5e9",
+  },
+  {
+    name: "Express.js",
+    role: "Routes and API logic",
+    color: "#374151",
+  },
+  {
+    name: "Node.js",
+    role: "Runs the server",
+    color: "#16a34a",
+  },
+  {
+    name: "AI agents",
+    role: "Chatbots and agentic AI in JavaScript",
+    color: "#7c3aed",
+  },
+  {
+    name: "MongoDB",
+    role: "Stores the data",
+    color: "#15803d",
+  },
 ];
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.15 } },
+  visible: {
+    transition: {
+      staggerChildren: 0.09,
+      delayChildren: 0.15,
+    },
+  },
 };
 
 const item = {
   hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
 };
 
 function Home() {
@@ -58,34 +96,28 @@ function Home() {
         id="home"
         className="relative flex min-h-screen flex-col overflow-hidden bg-[#dfe0e3] px-6 pb-10 pt-24 text-slate-900 sm:px-10"
       >
-        {/* Face as the background */}
-     
-        {/* Centered, Larger Hero Portrait */}
-      
-{/* Centered, Larger Hero Portrait */}
+        {/* Larger Portrait — Centered and Slightly Lower */}
+        <motion.div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-full items-end justify-center overflow-hidden md:w-[55%]"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.1, ease: "easeOut" }}
+        >
+          <img
+            src={HERO_IMAGE}
+            alt=""
+            className="relative bottom-0 h-[85%] w-auto max-w-none object-contain object-bottom opacity-40 mix-blend-multiply sm:h-[95%] md:h-[110%] md:translate-y-[-12%] md:opacity-100"
+          />
+        </motion.div>
 
-{/* Larger portrait positioned higher */}
-<motion.div
-  aria-hidden="true"
-  className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-full items-end justify-center overflow-hidden md:w-[55%]"
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 1.1, ease: "easeOut" }}
->
-  <img
-    src={HERO_IMAGE}
-    alt=""
-    className="relative bottom-0 h-[85%] w-auto max-w-none object-contain object-bottom opacity-40 mix-blend-multiply sm:h-[95%] md:h-[115%] md:translate-y-[-18%] md:opacity-100"
-  />
-</motion.div>
-
-        {/* Bottom fade */}
+        {/* Bottom Fade */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#dfe0e3] to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-t from-[#dfe0e3] to-transparent"
         />
 
-        {/* Social links */}
+        {/* Social Links */}
         <motion.div
           className="absolute right-5 top-6 z-20 flex items-center gap-3 sm:right-10 sm:top-8"
           variants={container}
@@ -110,13 +142,14 @@ function Home() {
           ))}
         </motion.div>
 
+        {/* Hero Content */}
         <motion.div
           className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between gap-14"
           variants={container}
           initial="hidden"
           animate="visible"
         >
-          {/* Text */}
+          {/* Introduction */}
           <div className="my-auto max-w-xl text-left">
             <motion.span
               variants={item}
@@ -144,7 +177,10 @@ function Home() {
               agentic AI that can reason, use tools, and get tasks done.
             </motion.p>
 
-            <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">
+            <motion.div
+              variants={item}
+              className="mt-9 flex flex-wrap gap-4"
+            >
               <a
                 href="#projects"
                 className="inline-flex items-center rounded-xl bg-slate-900 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
@@ -154,7 +190,7 @@ function Home() {
             </motion.div>
           </div>
 
-          {/* Tech stack strip */}
+          {/* Tech Stack Cards */}
           <motion.ol
             variants={item}
             aria-label="Tech stack layers"
@@ -172,7 +208,9 @@ function Home() {
                 />
                 <div>
                   <p className="font-bold leading-tight">{layer.name}</p>
-                  <p className="text-xs leading-snug text-slate-600">{layer.role}</p>
+                  <p className="text-xs leading-snug text-slate-600">
+                    {layer.role}
+                  </p>
                 </div>
               </li>
             ))}
