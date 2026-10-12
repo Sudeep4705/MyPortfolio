@@ -130,12 +130,6 @@ function Home() {
               >
                 View my projects
               </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
-              >
-                Contact me
-              </a>
             </motion.div>
           </div>
 
