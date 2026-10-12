@@ -238,7 +238,7 @@ function Home() {
       <Skills />
       {/* <ProjectDemo /> */}
       <Projects />
-      <Achievements />
+      {/* <Achievements /> */}
       <Contact />
     </>
   );
