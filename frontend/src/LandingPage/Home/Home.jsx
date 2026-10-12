@@ -28,7 +28,7 @@ function Home() {
     },
   ];
 
-    const containerVariants = {
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -52,28 +52,16 @@ function Home() {
   };
 
   return (
-
- <>
+    <>
       <div
         style={{
           position: "relative",
-          background:
-            "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
+          backgroundImage: 'url("/Images/Hero1.png")',
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
           height: "100vh",
-          overflow: "hidden",
         }}
       >
-        {/* Animated background blobs for depth */}
-        <div
-          className="absolute top-0 left-0 w-full h-full opacity-30"
-          style={{
-            background:
-              "radial-gradient(circle at 20% 30%, rgba(250,204,21,0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(239,68,68,0.15) 0%, transparent 40%)",
-          }}
-        />
-
         <div
           style={{
             position: "absolute",
@@ -130,16 +118,17 @@ function Home() {
         </motion.div>
 
         {/* Main Box */}
-        <div className="flex flex-col md:flex-row justify-evenly items-center text-center box relative z-10 h-full">
+        <div className="flex flex-col md:flex-row justify-evenly items-center text-center box relative z-10">
           {/* Box1 */}
-          <div className="md:mt-90 flex flex-col gap-6">
+          <div className="md:mt-90">
             <motion.p
               style={{
                 position: "relative",
                 zIndex: 2,
+                color: "red",
                 top: "50%",
               }}
-              className="text-4xl sm:text-5xl md:text-6xl m-4 font-bold tracking-wider"
+              className="text-3xl sm:text-4xl m-4"
               initial={{
                 opacity: 0,
                 y: 50,
@@ -152,30 +141,20 @@ function Home() {
               }}
               transition={{
                 delay: 1,
-                duration: 0.6,
+                duration: 0.2,
                 ease: "easeOut",
               }}
             >
-              <span
-                style={{
-                  background:
-                    "linear-gradient(90deg, #4ade80 0%, #22c55e 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  textShadow: "0 0 30px rgba(74,222,128,0.3)",
-                }}
-              >
-                MongoDB
-              </span>
+              MongoDB
             </motion.p>
             <motion.p
               style={{
                 position: "relative",
                 zIndex: 2,
+                color: "black",
                 top: "50%",
               }}
-              className="text-4xl sm:text-5xl md:text-6xl m-4 font-bold tracking-wider"
+              className="text-3xl sm:text-4xl m-4"
               initial={{
                 opacity: 0,
                 y: 50,
@@ -188,52 +167,24 @@ function Home() {
               }}
               transition={{
                 delay: 2,
-                duration: 0.6,
+                duration: 0.2,
                 ease: "easeOut",
               }}
             >
-              <span
-                style={{
-                  background:
-                    "linear-gradient(90deg, #84cc16 0%, #65a30d 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  textShadow: "0 0 30px rgba(132,204,22,0.3)",
-                }}
-              >
-                NodeJs
-              </span>
+              NodeJs
             </motion.p>
           </div>
 
-          {/* Center decorative element */}
-          <motion.div
-            className="hidden md:flex flex-col items-center justify-center mx-8"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2.5, duration: 0.8 }}
-          >
-            <div
-              className="w-16 h-16 rounded-full border-2 border-yellow-400/30 flex items-center justify-center"
-              style={{
-                boxShadow:
-                  "0 0 40px rgba(250,204,21,0.2), inset 0 0 20px rgba(250,204,21,0.1)",
-              }}
-            >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500"></div>
-            </div>
-          </motion.div>
-
           {/* Box2 */}
-          <div className="md:mt-90 flex flex-col gap-6">
+          <div className="md:mt-90">
             <motion.p
               style={{
                 position: "relative",
                 zIndex: 2,
+                color: "black",
                 top: "50%",
               }}
-              className="text-4xl sm:text-5xl md:text-6xl m-4 font-bold tracking-wider"
+              className="text-3xl sm:text-4xl m-4"
               initial={{
                 opacity: 0,
                 y: 50,
@@ -246,30 +197,20 @@ function Home() {
               }}
               transition={{
                 delay: 3,
-                duration: 0.6,
+                duration: 0.2,
                 ease: "easeOut",
               }}
             >
-              <span
-                style={{
-                  background:
-                    "linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  textShadow: "0 0 30px rgba(251,191,36,0.3)",
-                }}
-              >
-                ExpressJs
-              </span>
+              ExpressJs
             </motion.p>
             <motion.p
               style={{
                 position: "relative",
                 zIndex: 2,
+                color: "red",
                 top: "50%",
               }}
-              className="text-4xl sm:text-5xl md:text-6xl m-4 font-bold tracking-wider"
+              className="text-3xl sm:text-4xl m-4"
               initial={{
                 opacity: 0,
                 y: 50,
@@ -282,22 +223,11 @@ function Home() {
               }}
               transition={{
                 delay: 4,
-                duration: 0.6,
+                duration: 0.2,
                 ease: "easeOut",
               }}
             >
-              <span
-                style={{
-                  background:
-                    "linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  textShadow: "0 0 30px rgba(56,189,248,0.3)",
-                }}
-              >
-                ReactJs
-              </span>
+              ReactJs
             </motion.p>
           </div>
         </div>
