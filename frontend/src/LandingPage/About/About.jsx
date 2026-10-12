@@ -361,74 +361,7 @@ function About() {
           </div>
         </motion.div>
 
-        {/* Featured Projects */}
-        <div className="mt-20">
-          <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">
-                Selected Work
-              </p>
-
-              <h3 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
-                Projects I'm Proud Of
-              </h3>
-
-              <p className="mt-3 max-w-2xl leading-7 text-slate-600">
-                A selection of applications showcasing my
-                experience with full-stack engineering and AI.
-              </p>
-            </div>
-
-            <a
-              href="https://github.com/Sudeep4705"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex shrink-0 items-center gap-2 font-semibold text-emerald-700 transition hover:text-emerald-900"
-            >
-              Explore GitHub
-              <ArrowUpRight size={19} />
-            </a>
-          </div>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {projects.map((project, index) => (
-              <motion.article
-                key={project.name}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg md:p-7"
-              >
-                <p className="text-sm font-semibold text-emerald-700">
-                  {project.type}
-                </p>
-
-                <h4 className="mt-3 text-2xl font-bold text-slate-900 transition group-hover:text-emerald-700">
-                  {project.name}
-                </h4>
-
-                <p className="mt-4 leading-7 text-slate-600">
-                  {project.description}
-                </p>
-
-                <a
-                  href="https://github.com/Sudeep4705"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-800 transition hover:text-emerald-700"
-                >
-                  View on GitHub
-                  <ArrowUpRight size={17} />
-                </a>
-              </motion.article>
-            ))}
-          </div>
-        </div>
+   
 
         {/* Closing CTA */}
         <motion.div
