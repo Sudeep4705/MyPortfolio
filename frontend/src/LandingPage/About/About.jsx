@@ -195,67 +195,82 @@ function About() {
           </motion.div>
 
           {/* Education and Achievement */}
-         
-{/* Education */}
-<div className="flex flex-col gap-6 lg:col-span-2">
-  <motion.div
-    variants={fadeUp}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.2 }}
-    transition={{ duration: 0.6, delay: 0.1 }}
-    className="flex-1 rounded-3xl bg-slate-900 p-7 text-white md:p-8"
-  >
-    <GraduationCap
-      size={32}
-      className="mb-5 text-emerald-400"
-    />
+          <div className="flex flex-col gap-6 lg:col-span-2">
 
-    <p className="text-sm font-medium text-slate-400">
-      Education
-    </p>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex-1 rounded-3xl bg-slate-900 p-7 text-white md:p-8"
+            >
+              <GraduationCap
+                size={32}
+                className="mb-5 text-emerald-400"
+              />
 
-    <h3 className="mt-3 text-2xl font-bold">
-      Master of Computer Applications
-    </h3>
+              <p className="text-sm font-medium text-slate-400">
+                Education
+              </p>
 
-    <p className="mt-3 text-slate-300">
-      CMR University
-    </p>
+              <h3 className="mt-3 text-2xl font-bold">
+                Master of Computer Applications
+              </h3>
 
-    <div className="mt-6 flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-4">
-      <span className="text-sm text-slate-300">
-        MCA CGPA
-      </span>
+              <p className="mt-3 text-slate-300">
+                CMR University
+              </p>
 
-      <span className="text-xl font-bold text-emerald-400">
-        8.23 / 10
-      </span>
-    </div>
+              <div className="mt-6 flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-4">
+                <span className="text-sm text-slate-300">
+                  MCA CGPA
+                </span>
 
-    <div className="mt-5 border-t border-white/10 pt-5">
-      <p className="font-semibold">
-        Bachelor of Computer Applications
-      </p>
+                <span className="text-xl font-bold text-emerald-400">
+                  8.23 / 10
+                </span>
+              </div>
 
-      <p className="mt-1 text-sm text-slate-400">
-        Mangalore University · CGPA 7.33
-      </p>
-    </div>
+              <div className="mt-5 border-t border-white/10 pt-5">
+                <p className="font-semibold">
+                  Bachelor of Computer Applications
+                </p>
+                <p className="mt-1 text-sm text-slate-400">
+                  Mangalore University · CGPA 7.33
+                </p>
+              </div>
+            </motion.div>
 
-    {/* Certificate Link */}
-    <a
-      href="https://drive.google.com/file/d/1OfY4R1lr-5aeA2v27U_gckI3L_CruoQS/view?usp=drive_link"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="mt-8 inline-flex items-center gap-2 rounded-xl bg-emerald-400 px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:bg-emerald-300"
-    >
-      View Certificate
-      <ArrowUpRight size={18} />
-    </a>
-  </motion.div>
-</div>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="rounded-3xl border border-amber-200 bg-amber-50 p-7 md:p-8"
+            >
+              <Trophy
+                size={30}
+                className="mb-4 text-amber-600"
+              />
 
+              <h3 className="text-xl font-bold text-slate-900">
+                Hackathon Recognition
+              </h3>
+
+              <p className="mt-3 leading-7 text-slate-600">
+                Received a Certificate of Distinction at
+                CuraLink Hackathon v2.0, organized by
+                Humanity Founders.
+              </p>
+
+              <p className="mt-4 font-bold text-amber-700">
+                Top 100 out of 7,000+ participants
+              </p>
+            </motion.div>
+
+          </div>
         </div>
 
         {/* Expertise */}
