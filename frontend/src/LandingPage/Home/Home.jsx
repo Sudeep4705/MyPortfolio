@@ -5,7 +5,7 @@ import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 
 // Put your original photo at: public/sudeep.png
-const HERO_IMAGE = "/Images/Hero1.png";
+const HERO_IMAGE = "/Images/Hero1-clean.png";
 
 const socialLinks = [
   {
