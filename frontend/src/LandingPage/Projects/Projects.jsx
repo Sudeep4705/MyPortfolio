@@ -4,14 +4,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const projects = [
   {
-    title: 'Go4Give',
-    img: '/Images/go4give.png',
-    desc: 'A compassionate MERN platform for donating to orphanages and personal fundraisers. Users can create campaigns, track live progress, and complete secure payments using Razorpay.',
-    langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'JWT', 'Bootstrap'],
-    repo: 'https://github.com/Sudeep4705/Go4Give',
-    demo: 'https://go4give.netlify.app/',
-  },
-  {
     title: 'Nexus - AI RAG Chatbot',
     img: '/Images/nexus.png',
     desc: 'A full-stack RAG chatbot that enables users to query PDF and Excel documents using AI-powered retrieval, chat history, and web search.',
@@ -35,6 +27,22 @@ const projects = [
     repo: 'https://github.com/Sudeep4705/Curalink',
     demo: 'https://curalink-rust.vercel.app/',
   },
+      {
+    title: 'AI Customer Support Agent',
+    img: '/Images/customeragent.png',
+    desc: 'An Amazon-focused AI customer support agent using RAG to classify customer issues, retrieve similar historical conversations from Qdrant, and generate contextual responses using Groq.',
+    langs: ['React', 'Node.js', 'Express', 'Qdrant', 'Voyage AI', 'Groq', 'Tailwind CSS'],
+    repo: 'https://github.com/Sudeep4705/ai-customer-support-agent',
+    demo: 'https://ai-customer-support-agent-ruddy.vercel.app/',
+  },
+  {
+    title: 'Go4Give',
+    img: '/Images/go4give.png',
+    desc: 'A compassionate MERN platform for donating to orphanages and personal fundraisers. Users can create campaigns, track live progress, and complete secure payments using Razorpay.',
+    langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'JWT', 'Bootstrap'],
+    repo: 'https://github.com/Sudeep4705/Go4Give',
+    demo: 'https://go4give.netlify.app/',
+  },
   {
     title: 'Airbnb Clone',
     img: '/Images/airbnb.png',
@@ -42,14 +50,6 @@ const projects = [
     langs: ['Node.js', 'Express', 'MongoDB', 'Cloudinary', 'Mapbox'],
     repo: 'https://github.com/Sudeep4705/Airbnb',
     demo: 'https://airbnb-7r6k.onrender.com/listings',
-  },
-  {
-    title: 'AI Customer Support Agent',
-    img: '/Images/customeragent.png',
-    desc: 'An Amazon-focused AI customer support agent using RAG to classify customer issues, retrieve similar historical conversations from Qdrant, and generate contextual responses using Groq.',
-    langs: ['React', 'Node.js', 'Express', 'Qdrant', 'Voyage AI', 'Groq', 'Tailwind CSS'],
-    repo: 'https://github.com/Sudeep4705/ai-customer-support-agent',
-    demo: 'https://ai-customer-support-agent-ruddy.vercel.app/',
   },
   {
     title: 'Golf Charity Lottery Platform',
