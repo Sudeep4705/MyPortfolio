@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Code2,
@@ -33,53 +31,7 @@ const highlights = [
   },
 ];
 
-const skills = [
-  'JavaScript',
-  'React.js',
-  'Node.js',
-  'Express.js',
-  'MongoDB',
-  'MySQL',
-  'PostgreSQL',
-  'Prisma',
-  'Redux',
-  'Zustand',
-  'Tailwind CSS',
-  'REST APIs',
-  'JWT Authentication',
-  'Docker',
-  'Git & GitHub',
-  'RAG',
-  'LLM Integration',
-  'Qdrant',
-];
 
-const projects = [
-  {
-    name: 'Nexus',
-    type: 'AI & RAG Chatbot',
-    description:
-      'A full-stack AI chatbot that answers questions about PDF and Excel documents using Qdrant, Voyage AI embeddings, Groq, and tool calling.',
-  },
-  {
-    name: 'SentinelAI',
-    type: 'AI Security Platform',
-    description:
-      'An industrial security review platform that visualizes security events and uses AI agents to investigate incidents and generate structured reports.',
-  },
-  {
-    name: 'MediNova',
-    type: 'AI Medical Research Assistant',
-    description:
-      'An AI-powered research assistant that retrieves medical literature and clinical-trial information and supports conversational follow-up questions.',
-  },
-  {
-    name: 'Go4Give',
-    type: 'Full Stack & Payments',
-    description:
-      'A charity donation platform featuring Razorpay integration, JWT authentication, protected routes, and automated donation receipts.',
-  },
-];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
