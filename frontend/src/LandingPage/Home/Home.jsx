@@ -1,10 +1,11 @@
 import { motion, MotionConfig } from "motion/react";
-// NOTE: Home.css removed on purpose. Its old rules (red/black tech names,
-// centered image layout) were what made the hero look like the screenshot.
 import About from "../About/About";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
+
+// Put your original photo at: public/sudeep.png
+const HERO_IMAGE = "/sudeep.png";
 
 const socialLinks = [
   {
@@ -32,13 +33,12 @@ const socialLinks = [
   },
 ];
 
-// Top of the stack first, the way a request travels down to the database.
 const stack = [
-  { name: "React.js", role: "What people see and click", color: "#0ea5e9", offset: "sm:translate-x-0" },
-  { name: "Express.js", role: "Routes and API logic", color: "#374151", offset: "sm:translate-x-6" },
-  { name: "Node.js", role: "Runs the server", color: "#16a34a", offset: "sm:translate-x-12" },
-  { name: "AI agents", role: "Chatbots and agentic AI in JavaScript", color: "#7c3aed", offset: "sm:translate-x-[4.5rem]" },
-  { name: "MongoDB", role: "Stores the data", color: "#15803d", offset: "sm:translate-x-24" },
+  { name: "React.js", role: "What people see and click", color: "#0ea5e9" },
+  { name: "Express.js", role: "Routes and API logic", color: "#374151" },
+  { name: "Node.js", role: "Runs the server", color: "#16a34a" },
+  { name: "AI agents", role: "Chatbots and agentic AI in JavaScript", color: "#7c3aed" },
+  { name: "MongoDB", role: "Stores the data", color: "#15803d" },
 ];
 
 const container = {
@@ -56,12 +56,27 @@ function Home() {
     <MotionConfig reducedMotion="user">
       <section
         id="home"
-        className="relative flex min-h-screen items-center overflow-hidden bg-stone-50 px-6 py-24 text-slate-900 sm:px-10"
+        className="relative flex min-h-screen flex-col overflow-hidden bg-[#dfe0e3] px-6 pb-10 pt-24 text-slate-900 sm:px-10"
       >
-        {/* Subtle dotted grid */}
+        {/* Face as the background */}
+        <motion.div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-[60%]"
+          initial={{ opacity: 0, scale: 1.03 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.1, ease: "easeOut" }}
+        >
+          <img
+            src={HERO_IMAGE}
+            alt=""
+            className="h-full w-full object-cover object-[50%_20%] opacity-40 mix-blend-multiply md:opacity-100 [mask-image:linear-gradient(to_left,black_55%,transparent_100%)]"
+          />
+        </motion.div>
+
+        {/* Bottom fade */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#dfe0e3] to-transparent"
         />
 
         {/* Social links */}
@@ -80,7 +95,7 @@ function Home() {
               title={link.name}
               aria-label={link.name}
               variants={item}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-800 shadow-sm transition-colors hover:border-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-white/70 text-slate-800 shadow-sm backdrop-blur transition-colors hover:border-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
             >
               <span className="flex h-5 w-5 [&>svg]:h-full [&>svg]:w-full">
                 {link.icon}
@@ -90,16 +105,16 @@ function Home() {
         </motion.div>
 
         <motion.div
-          className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-14 md:grid-cols-[1.1fr_0.9fr]"
+          className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between gap-14"
           variants={container}
           initial="hidden"
           animate="visible"
         >
-          {/* Left: text */}
-          <div className="text-left">
+          {/* Text */}
+          <div className="my-auto max-w-xl text-left">
             <motion.span
               variants={item}
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-sm font-medium text-emerald-800"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-emerald-800 backdrop-blur"
             >
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
               Open to opportunities
@@ -110,14 +125,14 @@ function Home() {
               className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
             >
               Hi, I'm Sudeep.
-              <span className="mt-2 block text-slate-500">
+              <span className="mt-2 block text-slate-600">
                 I build web apps and AI agents in JavaScript.
               </span>
             </motion.h1>
 
             <motion.p
               variants={item}
-              className="mt-6 max-w-lg text-lg leading-8 text-slate-600"
+              className="mt-6 max-w-lg text-lg leading-8 text-slate-700"
             >
               I build full-stack apps with the MERN stack, plus chatbots and
               agentic AI that can reason, use tools, and get tasks done.
@@ -133,27 +148,29 @@ function Home() {
             </motion.div>
           </div>
 
-          {/* Right: the tech stack, drawn as layers */}
-          <motion.div variants={item} className="relative mx-auto w-full max-w-md">
-            <ol className="flex flex-col gap-3" aria-label="Tech stack layers">
-              {stack.map((layer) => (
-                <li
-                  key={layer.name}
-                  className={`group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-transform duration-300 hover:-translate-y-1 ${layer.offset}`}
-                >
-                  <span
-                    aria-hidden="true"
-                    className="h-11 w-1.5 shrink-0 rounded-full"
-                    style={{ backgroundColor: layer.color }}
-                  />
-                  <div>
-                    <p className="text-lg font-bold leading-tight">{layer.name}</p>
-                    <p className="text-sm text-slate-500">{layer.role}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </motion.div>
+          {/* Tech stack strip */}
+          <motion.ol
+            variants={item}
+            aria-label="Tech stack layers"
+            className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5"
+          >
+            {stack.map((layer) => (
+              <li
+                key={layer.name}
+                className="flex items-center gap-3 rounded-2xl border border-white/60 bg-white/70 p-4 shadow-sm backdrop-blur transition-transform duration-300 hover:-translate-y-1"
+              >
+                <span
+                  aria-hidden="true"
+                  className="h-10 w-1.5 shrink-0 rounded-full"
+                  style={{ backgroundColor: layer.color }}
+                />
+                <div>
+                  <p className="font-bold leading-tight">{layer.name}</p>
+                  <p className="text-xs leading-snug text-slate-600">{layer.role}</p>
+                </div>
+              </li>
+            ))}
+          </motion.ol>
         </motion.div>
       </section>
 
