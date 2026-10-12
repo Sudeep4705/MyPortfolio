@@ -67,7 +67,7 @@ function Home() {
           transition={{ duration: 1.1, ease: "easeOut" }}
         >
           <img
-            src={HERO_IMAGE}
+            src="/Images/Hero1.png"
             alt=""
             className="h-full w-full object-cover object-[50%_20%] opacity-40 mix-blend-multiply md:opacity-100 [mask-image:linear-gradient(to_left,black_55%,transparent_100%)]"
           />
