@@ -67,28 +67,22 @@ function Home() {
         style={{ backgroundColor: HERO_BG }}
       >
         {/* Portrait area with matching background */}
-        <motion.div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 z-0 flex w-full items-end justify-center overflow-hidden md:w-[55%]"
-          style={{ backgroundColor: HERO_BG }}
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
-        >
-          <img
-            src={HERO_IMAGE}
-            alt=""
-            className="relative h-[85%] w-auto max-w-none object-contain object-bottom sm:h-[95%] md:h-[110%] md:translate-y-[-10%]"
-          />
+       
+{/* Hero Portrait */}
+<motion.div
+  aria-hidden="true"
+  className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden items-end justify-center overflow-hidden md:flex md:w-[55%]"
+  initial={{ opacity: 0, scale: 0.98 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1.1, ease: "easeOut" }}
+>
+  <img
+    src={HERO_IMAGE}
+    alt=""
+    className="h-[90%] w-auto max-w-none object-contain object-bottom"
+  />
+</motion.div>
 
-          {/* Soften the edges of the portrait area */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(to right, ${HERO_BG} 0%, transparent 28%), linear-gradient(to top, ${HERO_BG} 0%, transparent 18%)`,
-            }}
-          />
-        </motion.div>
 
         {/* Bottom Fade */}
         <div
