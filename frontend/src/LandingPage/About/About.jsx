@@ -187,6 +187,7 @@ function About() {
                 <p className="font-semibold text-slate-900">
                   Bengaluru, India
                 </p>
+
                 <p className="text-sm text-slate-500">
                   Full Stack Development · AI Applications
                 </p>
@@ -197,6 +198,7 @@ function About() {
           {/* Education and Achievement */}
           <div className="flex flex-col gap-6 lg:col-span-2">
 
+            {/* Education Card */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -236,12 +238,25 @@ function About() {
                 <p className="font-semibold">
                   Bachelor of Computer Applications
                 </p>
+
                 <p className="mt-1 text-sm text-slate-400">
                   Mangalore University · CGPA 7.33
                 </p>
+
+                {/* View Certificate Button */}
+                <a
+                  href="https://drive.google.com/file/d/1OfY4R1lr-5aeA2v27U_gckI3L_CruoQS/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-8 bg-green-500 text-black font-semibold px-6 py-3 rounded-xl hover:bg-green-400 transition duration-300"
+                >
+                  View Certificate
+                  <ArrowUpRight size={18} />
+                </a>
               </div>
             </motion.div>
 
+            {/* Hackathon Recognition */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -268,12 +283,23 @@ function About() {
               <p className="mt-4 font-bold text-amber-700">
                 Top 100 out of 7,000+ participants
               </p>
+
+              {/* View Certificate Button */}
+              <a
+                href="https://drive.google.com/file/d/1OfY4R1lr-5aeA2v27U_gckI3L_CruoQS/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-6 bg-green-500 text-black font-semibold px-6 py-3 rounded-xl hover:bg-green-400 transition duration-300"
+              >
+                View Certificate
+                <ArrowUpRight size={18} />
+              </a>
             </motion.div>
 
           </div>
         </div>
 
-        {/* Expertise */}
+        {/* Areas of Expertise */}
         <div className="mt-20">
           <motion.div
             variants={fadeUp}
@@ -360,8 +386,6 @@ function About() {
             ))}
           </div>
         </motion.div>
-
-   
 
         {/* Closing CTA */}
         <motion.div
