@@ -234,7 +234,7 @@ function Home() {
       </div>
 
       <About />
-      <Education />
+      {/* <Education /> */}
       <Skills />
       <ProjectDemo />
       <Projects />
