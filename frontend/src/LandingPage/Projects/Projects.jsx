@@ -1,248 +1,297 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-
 const projects = [
-
+  {
+    title: 'Nexus — AI RAG Chatbot',
+    img: '/Images/nexus.png',
+    desc: 'A full-stack AI chatbot that lets users query PDF and Excel documents using RAG, semantic search, conversation history, and web search integrations.',
+    langs: [
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'Qdrant',
+      'Voyage AI',
+      'Groq API',
+    ],
+    repo: 'https://github.com/Sudeep4705/Nexus',
+    demo: 'https://nexus-gules-rho.vercel.app/',
+  },
+  {
+    title: 'SentinelAI',
+    img: '/Images/sentinalai.png',
+    desc: 'An AI-powered security monitoring dashboard that analyzes events, detects suspicious activity, visualizes movement on maps, and generates incident summaries.',
+    langs: [
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Groq API',
+      'Leaflet.js',
+      'Tailwind CSS',
+    ],
+    repo: 'https://github.com/Sudeep4705/SentinalAi',
+    demo: 'https://senti-nal-ai.netlify.app/',
+  },
+  {
+    title: 'AI Customer Support Agent',
+    img: '/Images/customeragent.png',
+    desc: 'An Amazon-focused AI support agent that classifies customer issues into 20 intents, retrieves similar historical conversations using Qdrant, and generates contextual responses with Groq LLM.',
+    langs: [
+      'React',
+      'Node.js',
+      'Express',
+      'Qdrant',
+      'Voyage AI',
+      'Groq',
+      'Tailwind CSS',
+    ],
+    repo: 'https://github.com/Sudeep4705/ai-customer-support-agent',
+    demo: 'https://ai-customer-support-agent-ruddy.vercel.app/',
+  },
+  {
+    title: 'MediNova',
+    img: '/Images/medinova.png',
+    desc: 'An AI-powered medical research assistant that retrieves research papers and clinical-trial information and generates simplified insights using intelligent summarization.',
+    langs: [
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Groq API',
+      'PubMed API',
+      'OpenAlex API',
+    ],
+    repo: 'https://github.com/Sudeep4705/Curalink',
+    demo: 'https://curalink-rust.vercel.app/',
+  },
   {
     title: 'Go4Give',
     img: '/Images/go4give.png',
-    desc: 'A compassionate MERN platform for donating to orphanages and personal fundraisers. Users can create campaigns, track live progress bars, and complete secure payments via Razorpay integration.',
-    langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay', 'JWT', 'Bootstrap'],
+    desc: 'A charity donation platform where users can create fundraising campaigns, track donation progress, and make secure payments through Razorpay, with JWT authentication and automated receipts.',
+    langs: [
+      'React',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Razorpay',
+      'JWT',
+      'Bootstrap',
+    ],
     repo: 'https://github.com/Sudeep4705/Go4Give',
     demo: 'https://go4give.netlify.app/',
   },
   {
-  "title": "Nexus - AI RAG Chatbot",
-  "img": "/Images/nexus.png",
-  "desc": "A full-stack RAG chatbot that enables users to query any documents (PDFs/Excel) with AI-powered retrieval, chat history, and web search.",
-  "langs": ["React.js", "Node.js", "Express.js", "PostgreSQL", "Qdrant", "Voyage AI", "Groq API", "Tailwind CSS"],
-  "repo": "https://github.com/Sudeep4705/Nexus",
-  "demo": "https://nexus-gules-rho.vercel.app/"
-},
-  {
-  title: 'Sentinal AI',
-  img: '/Images/sentinalai.png',
-  desc: 'An AI-powered security monitoring dashboard that analyzes real-time events, detects suspicious activity, visualizes movement on maps, and generates smart incident summaries.',
-  langs: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Groq API', 'Leaflet.js', 'Tailwind CSS'],
-  repo: 'https://github.com/Sudeep4705/SentinalAi',
-  demo: 'https://senti-nal-ai.netlify.app/',
-  },{
-  title: 'MediNova',
-  img: '/Images/medinova.png',
-  desc: 'An AI-powered medical research assistant that fetches trusted research papers, clinical trials, and generates simplified health insights through intelligent summarization.',
-  langs: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Groq API', 'PubMed API', 'OpenAlex API', 'Tailwind CSS'],
-  repo: 'https://github.com/Sudeep4705/Curalink',
-  demo: 'https://curalink-rust.vercel.app/',
-},
-  {
-    title: 'Airbnb-Clone',
+    title: 'Airbnb Clone',
     img: '/Images/airbnb.png',
-    desc: 'Full-stack MERN marketplace where hosts can add, edit, delete hotel listings, upload multiple photos, and manage bookings. search & filters, map view, and an admin dashboard.',
-    langs: ['Node.js', 'Express', 'MongoDB', 'Cloudinary', 'Mapbox'],
+    desc: 'A full-stack accommodation marketplace featuring listing management, image uploads, search and filters, map integration, and booking-related functionality.',
+    langs: [
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Cloudinary',
+      'Mapbox',
+    ],
     repo: 'https://github.com/Sudeep4705/Airbnb',
     demo: 'https://airbnb-7r6k.onrender.com/listings',
   },
   {
-  title: 'AI Customer Support Agent',
-  img: '/Images/customeragent.png',
- desc: 'Built an Amazon-specific AI customer support agent using RAG to classify customer issues into 20 intents, retrieve the top 10 similar historical AmazonHelp conversations from Qdrant, and generate contextual support responses using Groq LLM. Includes human escalation guidance and a deployed chat interface.',
-  langs: ['React', 'Node.js', 'Express', 'Qdrant', 'Voyage AI', 'Groq', 'Tailwind CSS'],
-  repo: 'https://github.com/Sudeep4705/ai-customer-support-agent',
-  demo: 'https://ai-customer-support-agent-ruddy.vercel.app/',
-},
-  {
-  title: 'Golf Charity Lottery Platform',
-  img: '/Images/golfgives.png',
-  desc: 'A MERN full-stack platform where users submit golf scores to participate in lottery-based prize draws while contributing to charities. Features rolling score tracking, prize pool distribution logic, and a charity donation system with user-defined percentages.',
-  langs: ['JavaScript', 'React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
-  repo: 'https://github.com/Sudeep4705/golf-gives-platform',
-  demo: 'https://golf-gives-platform.netlify.app/'
-},
-{
-  title: 'ZoomClone',
-  img: '/Images/zoomclone.png',
-  desc: 'A real-time video conferencing web application inspired by Zoom, where users can connect with each other through secure video and audio calls. The platform supports live screen sharing, enabling seamless collaboration and communication. Built with a modern full-stack architecture to ensure low-latency connections and a smooth, intuitive user experience.',
-  langs: ['React', 'Node.js', 'Express', 'WebRTC', 'Socket.io', 'MongoDB', 'Tailwind CSS'],
-  repo: 'https://github.com/Sudeep4705/ZoomClone.git',
-  demo: 'https://zoom-clo-ne.netlify.app/',
-},
-{
-  title: 'SkillBridge',
-  img: '/Images/skillbridge.png',
-  desc: 'A role-based learning management system designed to manage batches, sessions, students, and attendance efficiently. The platform supports multiple user roles including Institution, Trainer, Student, Programme Manager, and Monitoring Officer with secure authentication and role-based access control. Built with a full-stack MERN architecture to provide a smooth and scalable user experience.',
-  langs: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Tailwind CSS', 'Axios'],
-  repo: 'https://github.com/Sudeep4705/SkillBridge.git',
-  demo: 'https://skill-bri-dge.netlify.app/',
-},
-{
-  title: 'FitnessHelper',
-  img: 'Images/fitnessHelper.png',
-  desc: 'A smart MERN-based fitness application where users provide personal fitness details, and AI generates a personalized 7-day workout and fitness plan using the Groq AI API. The platform delivers dynamic, responsive UI with smooth animations for an engaging user experience.',
-  langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Groq AI API', 'Framer Motion', 'Tailwind CSS'],
-  repo: 'https://github.com/Sudeep4705/Fitness-Helper-Ai-Assessment.git', 
-  demo: 'https://fit-ness-helper.netlify.app/',
-},
-
-
-  {
-  title: 'Foodzo',
-  img: '/Images/foodzo.png',
-  desc: 'A MERN + TypeScript full-stack platform with hotel CRUD operations, secure JWT authentication, and a responsive UI with React, Tailwind, and Framer Motion.',
-  langs: ['TypeScript', 'React.js', 'Tailwind', 'Framer Motion', 'Node.js', 'Express', 'MongoDB', 'JWT'],
-  repo: 'https://github.com/Sudeep4705/FoodZo-Assessment.git',
-   demo: 'https://food-zo.netlify.app/',
-},
-
-  {
-    title: 'LevelUp – Gamer Social Hub',
-    img: '/Images/levelup.png',
-    desc: 'A gamer hub where users create quests, track achievements, and chat in real-time. Drag-and-drop boards, live updates, and secure auth via Passport.js.',
-    langs: ['React', 'Node.js', 'Express', 'MongoDB', 'Bootstrap', 'Passport.js'],
-    repo: 'https://github.com/Sudeep4705/Levelup',
+    title: 'ZoomClone',
+    img: '/Images/zoomclone.png',
+    desc: 'A real-time video conferencing application supporting video and audio calls, screen sharing, and live communication using WebRTC and Socket.io.',
+    langs: [
+      'React',
+      'Node.js',
+      'Express',
+      'WebRTC',
+      'Socket.io',
+      'MongoDB',
+      'Tailwind CSS',
+    ],
+    repo: 'https://github.com/Sudeep4705/ZoomClone.git',
+    demo: 'https://zoom-clo-ne.netlify.app/',
   },
-  {
-    title: 'Zerodha-Clone',
-    img: '/Images/zerodha.png',
-    desc: 'Full-stack stock-trading platform clone featuring live price feeds, portfolio dashboard, buy/sell orders, holdings & funds pages, and secure JWT authentication.',
-    langs: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Bootstrap'],
-    repo: 'https://github.com/Sudeep4705/Zerodha',
-  },
-  {
-    title: 'Formula1',
-    img: '/Images/formula1.png',
-    desc: 'Backend-first RESTful API and React dashboard for Formula 1 enthusiasts to add, edit, delete and view detailed car specs. Secured with Passport.js authentication.',
-    langs: ['Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
-    repo: 'https://github.com/Sudeep4705/Formula1',
-  },
-  {
-    title: 'Gamers World',
-    img: '/Images/gamers.png',
-    desc: 'A React + Node CRUD platform where gamers can create, read, update and delete game records, reviews, and ratings.',
-    langs: ['Node.js', 'Express', 'MongoDB', 'Passport.js', 'Bootstrap'],
-    repo: 'https://github.com/Sudeep4705/Gamers-World',
-  },
-
-
 ];
 
 const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.12,
     },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
-      stiffness: 70,
-      damping: 15,
+      duration: 0.5,
+      ease: 'easeOut',
     },
   },
 };
 
 const Projects = () => {
   return (
-    <section className="bg-gray-900 py-12 md:py-20 text-white">
-  <div className="container mx-auto px-4">
-    <motion.h1
-      className="text-4xl md:text-5xl font-bold text-center mb-12"
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+    <section
+      id="projects"
+      className="bg-gray-900 py-16 text-white md:py-20"
     >
-      My Projects
-    </motion.h1>
+      <div className="container mx-auto px-4 sm:px-6">
 
-    <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      {projects.map((p, idx) => (
+        {/* Section Heading */}
         <motion.div
-          key={idx}
-          variants={cardVariants}
-          className="group flex flex-col bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-900/50"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12 text-center"
         >
-          <div className="overflow-hidden">
-            <img
-              src={p.img}
-              alt={p.title}
-              className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-emerald-400">
+            Selected Work
+          </p>
 
-          <div className="p-6 flex flex-col flex-grow">
-            <h3 className="text-xl font-bold text-gray-100 mb-2">{p.title}</h3>
-            <p className="text-gray-400 text-sm flex-grow mb-4">{p.desc}</p>
+          <h2 className="text-4xl font-extrabold md:text-5xl">
+            My Projects
+          </h2>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {p.langs.map((lang) => (
-                <span
-                  key={lang}
-                  className="px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-900/60 text-emerald-300"
-                >
-                  {lang}
-                </span>
-              ))}
-            </div>
-
-            {/* Links Container */}
-            <div className="mt-auto flex items-center gap-4">
-              <a
-                href={p.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gray-300 font-semibold transition-colors hover:text-emerald-400"
-              >
-                <GitHubIcon fontSize="small" />
-               View on GitHub
-              </a>
-
-              {/* Live Demo Link */}
-              {p.demo && (
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-gray-300 font-semibold transition-colors hover:text-emerald-400"
-                >
-                  {/* Inline SVG for External Link (No import needed) */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                  Live Demo
-                </a>
-              )}
-            </div>
-          </div>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-400 md:text-lg">
+            A selection of full-stack applications and AI-powered
+            solutions built to solve practical problems and explore
+            modern software engineering.
+          </p>
         </motion.div>
-      ))}
-    </motion.div>
-  </div>
-</section>
+
+        {/* Project Cards */}
+        <motion.div
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.05 }}
+        >
+          {projects.map((project) => (
+            <motion.article
+              key={project.title}
+              variants={cardVariants}
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-700 bg-gray-800/60 transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/60 hover:shadow-xl hover:shadow-emerald-950/40"
+            >
+              {/* Project Screenshot */}
+              <div className="relative overflow-hidden bg-gray-800">
+                <img
+                  src={project.img}
+                  alt={`${project.title} project screenshot`}
+                  loading="lazy"
+                  className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/30 to-transparent opacity-60" />
+              </div>
+
+              {/* Project Details */}
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+
+                <h3 className="mb-3 text-xl font-bold text-white transition-colors group-hover:text-emerald-400">
+                  {project.title}
+                </h3>
+
+                <p className="mb-5 flex-1 text-sm leading-7 text-gray-300">
+                  {project.desc}
+                </p>
+
+                {/* Technology Badges */}
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {project.langs.map((lang) => (
+                    <span
+                      key={lang}
+                      className="rounded-full border border-emerald-500/15 bg-emerald-900/40 px-3 py-1 text-xs font-semibold text-emerald-300"
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Project Links */}
+                <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-gray-700 pt-4">
+
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} source code on GitHub`}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 transition-colors hover:text-emerald-400"
+                  >
+                    <GitHubIcon fontSize="small" />
+                    GitHub
+                  </a>
+
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} live demo`}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 transition-colors hover:text-emerald-400"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="17"
+                        height="17"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M14 3h7v7" />
+                        <path d="M10 14 21 3" />
+                        <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
+                      </svg>
+
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        {/* GitHub CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-14 text-center"
+        >
+          <p className="mb-5 text-gray-400">
+            Want to explore more of my work?
+          </p>
+
+          <a
+            href="https://github.com/Sudeep4705"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl border border-emerald-500 px-6 py-3 font-semibold text-emerald-400 transition duration-300 hover:bg-emerald-500 hover:text-gray-950"
+          >
+            <GitHubIcon fontSize="small" />
+            Explore All Projects
+          </a>
+        </motion.div>
+
+      </div>
+    </section>
   );
 };
 
