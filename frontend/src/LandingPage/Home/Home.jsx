@@ -5,7 +5,7 @@ import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 
 // Put your original photo at: public/sudeep.png
-const HERO_IMAGE = "/sudeep.png";
+const HERO_IMAGE = "/Images/Hero1.png";
 
 const socialLinks = [
   {
@@ -67,7 +67,7 @@ function Home() {
           transition={{ duration: 1.1, ease: "easeOut" }}
         >
           <img
-            src="/Images/Hero1.png"
+            src={HERO_IMAGE}
             alt=""
             className="h-full w-full object-cover object-[50%_20%] opacity-40 mix-blend-multiply md:opacity-100 [mask-image:linear-gradient(to_left,black_55%,transparent_100%)]"
           />
