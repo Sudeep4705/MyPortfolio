@@ -37,7 +37,8 @@ const stack = [
   { name: "React.js", role: "What people see and click", color: "#0ea5e9", offset: "sm:translate-x-0" },
   { name: "Express.js", role: "Routes and API logic", color: "#374151", offset: "sm:translate-x-6" },
   { name: "Node.js", role: "Runs the server", color: "#16a34a", offset: "sm:translate-x-12" },
-  { name: "MongoDB", role: "Stores the data", color: "#15803d", offset: "sm:translate-x-[4.5rem]" },
+  { name: "AI agents", role: "Chatbots and agentic AI in JavaScript", color: "#7c3aed", offset: "sm:translate-x-[4.5rem]" },
+  { name: "MongoDB", role: "Stores the data", color: "#15803d", offset: "sm:translate-x-24" },
 ];
 
 const container = {
@@ -110,7 +111,7 @@ function Home() {
             >
               Hi, I'm Sudeep.
               <span className="mt-2 block text-slate-500">
-                I build full-stack web apps with the MERN stack.
+                I build web apps and AI agents in JavaScript.
               </span>
             </motion.h1>
 
@@ -118,8 +119,8 @@ function Home() {
               variants={item}
               className="mt-6 max-w-lg text-lg leading-8 text-slate-600"
             >
-              From the database to the button you click, I build fast,
-              responsive apps with clean code and a clear user experience.
+              I build full-stack apps with the MERN stack, plus chatbots and
+              agentic AI that can reason, use tools, and get tasks done.
             </motion.p>
 
             <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">
@@ -138,9 +139,9 @@ function Home() {
             </motion.div>
           </div>
 
-          {/* Right: the MERN stack, drawn as the layers it actually is */}
+          {/* Right: the tech stack, drawn as layers */}
           <motion.div variants={item} className="relative mx-auto w-full max-w-md">
-            <ol className="flex flex-col gap-3" aria-label="MERN stack layers">
+            <ol className="flex flex-col gap-3" aria-label="Tech stack layers">
               {stack.map((layer) => (
                 <li
                   key={layer.name}
