@@ -242,17 +242,6 @@ function About() {
                 <p className="mt-1 text-sm text-slate-400">
                   Mangalore University · CGPA 7.33
                 </p>
-
-                {/* View Certificate Button */}
-                <a
-                  href="https://drive.google.com/file/d/1OfY4R1lr-5aeA2v27U_gckI3L_CruoQS/view?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-8 bg-green-500 text-black font-semibold px-6 py-3 rounded-xl hover:bg-green-400 transition duration-300"
-                >
-                  View Certificate
-                  <ArrowUpRight size={18} />
-                </a>
               </div>
             </motion.div>
 
