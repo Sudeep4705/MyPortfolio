@@ -104,11 +104,11 @@ function Home() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: "easeOut" }}
         >
-          <img
-            src={HERO_IMAGE}
-            alt=""
-            className="relative bottom-0 h-[85%] w-auto max-w-none object-contain object-bottom opacity-40 mix-blend-multiply sm:h-[95%] md:h-[110%] md:translate-y-[-12%] md:opacity-100"
-          />
+         <img
+  src={HERO_IMAGE}
+  alt=""
+  className="relative h-[85%] w-auto max-w-none object-contain object-bottom sm:h-[95%] md:h-[110%] md:translate-y-[-12%]"
+/>
         </motion.div>
 
         {/* Bottom Fade */}
