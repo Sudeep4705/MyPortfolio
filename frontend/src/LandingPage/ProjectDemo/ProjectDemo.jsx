@@ -188,6 +188,10 @@ const projectsData = [
     src: "/Images/zoomclone.png",
     alt: "zoom",
   },
+  {
+    src: "/Images/customeragent.png",
+    alt: "Ai customer support agent",
+  },
 ];
 
 function ProjectDemo() {
