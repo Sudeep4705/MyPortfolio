@@ -122,7 +122,7 @@ function About() {
 
               <h2
                 style={{ fontFamily: DISPLAY_FONT }}
-                className="mt-8 text-[4rem] font-normal uppercase leading-[0.9] text-white sm:text-[8rem] lg:text-[9rem] xl:text-[10rem]"
+                className="mt-8 text-[4.5rem] font-normal uppercase leading-[0.9] text-white sm:text-[6.5rem] lg:text-[7rem] xl:text-[8rem]"
               >
                 {['Ideas', 'into', 'products.'].map((word) => (
                   <span key={word} className="block overflow-hidden pb-1">
