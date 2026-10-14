@@ -1,4 +1,3 @@
-
 import { motion, MotionConfig } from "motion/react";
 import About from "../About/About";
 import Skills from "../Skills/Skills";
@@ -6,7 +5,17 @@ import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 
 const HERO_IMAGE = "/Images/Hero1-clean.png";
-const HERO_BG = "#dfe0e3";
+
+// Add this once in index.html <head> for the tall condensed headline:
+// <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+const DISPLAY_FONT = "'Anton', Impact, 'Arial Narrow Bold', sans-serif";
+
+const navLinks = [
+  { id: 1, name: "Projects", href: "#projects" },
+  { id: 2, name: "About", href: "#about" },
+  { id: 3, name: "Skills", href: "#skills" },
+  { id: 4, name: "Contact", href: "#contact" },
+];
 
 const socialLinks = [
   {
@@ -63,137 +72,182 @@ function Home() {
     <MotionConfig reducedMotion="user">
       <section
         id="home"
-        className="relative flex min-h-screen flex-col overflow-hidden px-6 pb-10 pt-24 text-slate-900 sm:px-10"
-        style={{ backgroundColor: HERO_BG }}
+        className="min-h-screen bg-orange-400 p-3 pt-20 sm:p-6 sm:pt-24 lg:p-8 lg:pt-24"
       >
-        {/* Portrait area with matching background */}
-       <motion.div
-  aria-hidden="true"
-  className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-full items-end justify-center overflow-hidden md:flex md:w-[55%]"
-  style={{ backgroundColor: HERO_BG }}
-  initial={{ opacity: 0, scale: 0.98 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 1.1, ease: "easeOut" }}
->
- <img
-  src={HERO_IMAGE}
-  alt=""
-  className="relative h-[85%] w-auto max-w-none object-contain object-bottom sm:h-[95%] md:h-[120%] md:translate-y-[-14%]"
-/>
+        {/* Main hero card */}
+        <div className="relative mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-[1400px] flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-orange-600 via-orange-700 to-orange-900 shadow-2xl lg:block lg:min-h-[680px]">
+          {/* White panel (top right) */}
+          <div
+            aria-hidden="true"
+            className="absolute right-0 top-0 hidden h-[82%] w-[42%] rounded-bl-3xl bg-white lg:block"
+          />
 
-  {/* Soften the edges of the portrait area */}
-  <div
-    className="absolute inset-0"
-    style={{
-      background: `linear-gradient(to right, ${HERO_BG} 0%, transparent 28%), linear-gradient(to top, ${HERO_BG} 0%, transparent 18%)`,
-    }}
-  />
-</motion.div>
+          {/* Portrait */}
+          <motion.img
+            src={HERO_IMAGE}
+            alt="Sudeep"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="pointer-events-none absolute bottom-0 left-1/2 z-10 hidden h-[108%] w-auto max-w-none -translate-x-[30%] object-contain object-bottom drop-shadow-2xl lg:block"
+          />
 
-        {/* Bottom Fade */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40"
-          style={{
-            background: `linear-gradient(to top, ${HERO_BG}, transparent)`,
-          }}
-        />
-
-        {/* Social Links */}
-        <motion.div
-          className="absolute right-5 top-6 z-20 flex items-center gap-3 sm:right-10 sm:top-8"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          {socialLinks.map((link) => (
+          {/* Top nav + social links */}
+          <motion.div
+            className="relative z-20 flex items-center justify-between px-6 py-6 lg:absolute lg:right-0 lg:top-0 lg:w-[42%] lg:px-10"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
             <motion.a
-              key={link.id}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={link.name}
-              aria-label={link.name}
               variants={item}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-white/70 text-slate-800 shadow-sm backdrop-blur transition-colors hover:border-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+              href="#home"
+              className="text-lg font-bold text-white lg:hidden"
             >
-              <span className="flex h-5 w-5 [&>svg]:h-full [&>svg]:w-full">
-                {link.icon}
-              </span>
+              Sudeep
             </motion.a>
-          ))}
-        </motion.div>
 
-        {/* Hero Content */}
-        <motion.div
-          className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between gap-14"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          <div className="my-auto max-w-xl text-left">
-            <motion.span
+            <motion.nav
               variants={item}
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-emerald-800 backdrop-blur"
+              aria-label="Main"
+              className="hidden items-center gap-6 text-[11px] font-semibold uppercase tracking-wider text-slate-800 lg:flex"
             >
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-              Open to opportunities
-            </motion.span>
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className="transition-colors hover:text-orange-600"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </motion.nav>
 
+            <div className="flex items-center gap-2">
+              {socialLinks.map((link) => (
+                <motion.a
+                  key={link.id}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={link.name}
+                  aria-label={link.name}
+                  variants={item}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-800 shadow-sm transition-colors hover:border-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+                >
+                  <span className="flex h-4 w-4 [&>svg]:h-full [&>svg]:w-full">
+                    {link.icon}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Left content */}
+          <motion.div
+            className="relative z-20 flex flex-1 flex-col justify-center px-6 pb-10 pt-6 sm:px-10 lg:absolute lg:inset-y-0 lg:left-0 lg:w-[48%] lg:px-14 lg:py-0"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
             <motion.h1
               variants={item}
-              className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+              style={{ fontFamily: DISPLAY_FONT }}
+              className="text-7xl font-normal uppercase leading-[0.92] tracking-tight text-slate-900 sm:text-8xl lg:text-[8.5rem]"
             >
-              Hi, I'm Sudeep.
-              <span className="mt-2 block text-slate-600">
-                I build web apps and AI agents in JavaScript.
-              </span>
+              Hi, I'm
+              <span className="block">Sudeep.</span>
             </motion.h1>
 
             <motion.p
               variants={item}
-              className="mt-6 max-w-lg text-lg leading-8 text-slate-700"
+              className="mt-6 max-w-sm text-lg font-medium leading-7 text-slate-900"
+            >
+              I build web apps and AI agents in JavaScript.
+            </motion.p>
+
+            <motion.p
+              variants={item}
+              className="mt-3 max-w-sm text-sm leading-6 text-slate-800"
             >
               I build full-stack apps with the MERN stack, plus chatbots and
               agentic AI that can reason, use tools, and get tasks done.
             </motion.p>
 
-            <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">
+            <motion.div variants={item} className="mt-8">
               <a
                 href="#projects"
-                className="inline-flex items-center rounded-xl bg-slate-900 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-slate-900 shadow-[0_0_30px_rgba(255,255,255,0.35)] transition-colors hover:bg-orange-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 View my projects
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg>
               </a>
             </motion.div>
+          </motion.div>
+
+          {/* Mobile portrait */}
+          <div className="relative z-10 flex h-80 items-end justify-center lg:hidden">
+            <img
+              src={HERO_IMAGE}
+              alt="Sudeep"
+              className="h-full w-auto max-w-none object-contain object-bottom drop-shadow-2xl"
+            />
           </div>
 
-          {/* Tech Stack Cards */}
-          <motion.ol
-            variants={item}
-            aria-label="Tech stack layers"
-            className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5"
+          {/* Right panel content */}
+          <motion.div
+            className="relative z-20 bg-white p-6 sm:p-8 lg:absolute lg:right-0 lg:top-[26%] lg:w-[24%] lg:bg-transparent lg:p-0 lg:pr-10"
+            variants={container}
+            initial="hidden"
+            animate="visible"
           >
-            {stack.map((layer) => (
-              <li
-                key={layer.name}
-                className="flex items-center gap-3 rounded-2xl border border-white/60 bg-white/70 p-4 shadow-sm backdrop-blur transition-transform duration-300 hover:-translate-y-1"
-              >
-                <span
-                  aria-hidden="true"
-                  className="h-10 w-1.5 shrink-0 rounded-full"
-                  style={{ backgroundColor: layer.color }}
-                />
-                <div>
-                  <p className="font-bold leading-tight">{layer.name}</p>
-                  <p className="text-xs leading-snug text-slate-600">
-                    {layer.role}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </motion.ol>
-        </motion.div>
+            <motion.div variants={item} className="lg:ml-auto lg:w-fit">
+              <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-orange-600">
+                Available for
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-orange-500" />
+              </p>
+              <p className="mt-2 text-2xl font-semibold leading-tight text-slate-900">
+                Open to
+                <span className="block">opportunities</span>
+              </p>
+            </motion.div>
+
+            <motion.ol
+              variants={item}
+              aria-label="Tech stack layers"
+              className="mt-8 space-y-3 lg:ml-auto lg:w-fit"
+            >
+              {stack.map((layer) => (
+                <li key={layer.name} className="flex items-center gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="h-8 w-1 shrink-0 rounded-full"
+                    style={{ backgroundColor: layer.color }}
+                  />
+                  <div>
+                    <p className="text-sm font-bold leading-tight text-slate-900">
+                      {layer.name}
+                    </p>
+                    <p className="text-[11px] leading-snug text-slate-600">
+                      {layer.role}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </motion.ol>
+          </motion.div>
+        </div>
       </section>
 
       <About />

@@ -1,5 +1,15 @@
-import React from "react";
-import { motion, MotionConfig } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  motion,
+  MotionConfig,
+  animate,
+  useInView,
+} from "framer-motion";
+import { LayoutTemplate, Server, Database, Wrench, ArrowUpRight } from "lucide-react";
+
+// Needs the Anton font (same one used in Home / About):
+// <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+const DISPLAY_FONT = "'Anton', Impact, 'Arial Narrow Bold', sans-serif";
 
 const skillsData = [
   {
@@ -198,98 +208,260 @@ const categories = [
   {
     title: "Frontend",
     note: "Interfaces and styling",
+    icon: LayoutTemplate,
     skills: ["HTML5", "CSS3", "JavaScript", "React", "Tailwind", "Bootstrap", "Framer Motion"],
   },
   {
     title: "Backend",
     note: "Servers and APIs",
+    icon: Server,
     skills: ["Node.js", "Express.js", "Prisma"],
   },
   {
     title: "Databases",
     note: "Where the data lives",
+    icon: Database,
     skills: ["MongoDB", "PostgreSQL", "MySQL"],
   },
   {
     title: "Tools",
     note: "Shipping and teamwork",
+    icon: Wrench,
     skills: ["Docker", "GitHub"],
   },
 ];
 
 const skillsByName = Object.fromEntries(skillsData.map((s) => [s.name, s]));
 
+// Stats are counted from the data above, so they never go out of date.
+const stats = [
+  { value: skillsData.length, label: "Technologies" },
+  { value: categories.length, label: "Categories" },
+  {
+    value: categories.find((c) => c.title === "Databases").skills.length,
+    label: "Databases",
+  },
+];
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const lineReveal = {
+  hidden: { y: "105%" },
+  visible: { y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+};
+
 const rowVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.06 },
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut", staggerChildren: 0.06, delayChildren: 0.15 },
   },
 };
 
 const tileVariants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } },
+  hidden: { opacity: 0, scale: 0.8, y: 10 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 260, damping: 18 },
+  },
 };
+
+// Counts up from 0 when it scrolls into view.
+function CountUp({ to }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, to, {
+      duration: 1.2,
+      ease: "easeOut",
+      onUpdate: (v) => setValue(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [inView, to]);
+
+  return <span ref={ref}>{value}</span>;
+}
 
 function Skills() {
   return (
     <MotionConfig reducedMotion="user">
-      <section id="skills" className="bg-gray-950 px-6 py-24 sm:px-10">
-        <div className="mx-auto max-w-6xl">
-          {/* Heading */}
-          <div className="mb-16 max-w-2xl">
-            <h2 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl">
-              Technologies I work with
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-400">
-              The tools I use to build web apps, APIs, and AI agents in
-              JavaScript.
-            </p>
-          </div>
+      <section id="skills" className="scroll-mt-4 bg-orange-400 p-3 sm:p-6 lg:p-8">
+        <div className="relative mx-auto grid w-full max-w-[1400px] overflow-hidden rounded-3xl bg-gradient-to-br from-orange-900 via-orange-700 to-orange-600 shadow-2xl lg:grid-cols-[1fr_1.1fr]">
+          {/* Floating background shapes */}
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-24 top-1/3 h-[34rem] w-[34rem] rounded-full bg-orange-500/30 blur-3xl"
+            animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/4 top-1/2 h-[28rem] w-[28rem] rounded-full bg-amber-400/30 blur-3xl"
+            animate={{ y: [0, 35, 0], x: [0, -25, 0] }}
+            transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+          />
 
-          {/* Categories */}
-          <div className="divide-y divide-gray-800">
-            {categories.map((category) => (
+          {/* LEFT: statement */}
+          <motion.div
+            className="relative z-10 flex flex-col justify-between gap-10 px-6 py-10 sm:px-10 lg:px-14 lg:py-14"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <div>
               <motion.div
-                key={category.title}
-                className="grid gap-6 py-10 first:pt-0 last:pb-0 lg:grid-cols-[220px_1fr] lg:gap-12"
-                variants={rowVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-80px" }}
+                variants={fadeUp}
+                className="flex items-center gap-4 text-sm font-medium uppercase tracking-wider text-white"
               >
-                <div>
-                  <h3 className="text-xl font-bold text-white">
-                    {category.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">{category.note}</p>
-                </div>
-
-                <ul className="flex flex-wrap gap-4">
-                  {category.skills.map((name) => {
-                    const skill = skillsByName[name];
-                    if (!skill) return null;
-
-                    return (
-                      <motion.li
-                        key={skill.name}
-                        variants={tileVariants}
-                        className="group flex w-28 flex-col items-center gap-3 rounded-2xl border border-transparent bg-white px-3 py-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400"
-                      >
-                        <span className="flex h-10 w-10 items-center justify-center [&>svg]:h-full [&>svg]:w-full">
-                          {skill.svg}
-                        </span>
-                        <span className="text-center text-xs font-semibold text-slate-700">
-                          {skill.name}
-                        </span>
-                      </motion.li>
-                    );
-                  })}
-                </ul>
+                My skills
+                <motion.span
+                  className="h-px w-24 origin-left bg-white/60"
+                  variants={{
+                    hidden: { scaleX: 0 },
+                    visible: { scaleX: 1, transition: { duration: 0.8, delay: 0.3 } },
+                  }}
+                />
               </motion.div>
-            ))}
-          </div>
+
+              <h2
+                style={{ fontFamily: DISPLAY_FONT }}
+                className="mt-8 text-[3.4rem] font-normal uppercase leading-[0.95] text-white sm:text-[5.5rem] lg:text-[5rem] xl:text-[6.5rem]"
+              >
+                {["Technologies", "I work", "with"].map((line) => (
+                  <span key={line} className="block overflow-hidden pb-1">
+                    <motion.span variants={lineReveal} className="block">
+                      {line}
+                    </motion.span>
+                  </span>
+                ))}
+              </h2>
+
+              <motion.p
+                variants={fadeUp}
+                className="mt-8 max-w-sm text-xl leading-8 text-white"
+              >
+                The tools I use to build web apps, APIs, and AI agents in
+                JavaScript.
+              </motion.p>
+
+              <motion.a
+                variants={fadeUp}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                href="#projects"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-orange-600 shadow-[0_0_30px_rgba(255,255,255,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                View my work
+                <ArrowUpRight size={16} />
+              </motion.a>
+            </div>
+
+            {/* Stats */}
+            <motion.dl
+              variants={fadeUp}
+              className="grid grid-cols-3 divide-x divide-white/25"
+            >
+              {stats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`${i === 0 ? "pr-4 sm:pr-6" : "px-4 sm:px-6"}`}
+                >
+                  <dd className="text-4xl font-semibold text-white">
+                    <CountUp to={stat.value} />
+                  </dd>
+                  <dt className="mt-1 text-xs uppercase leading-snug tracking-wide text-orange-100">
+                    {stat.label}
+                  </dt>
+                </div>
+              ))}
+            </motion.dl>
+          </motion.div>
+
+          {/* RIGHT: white panel */}
+          <motion.div
+            className="relative z-10 m-3 rounded-3xl bg-white p-5 sm:p-8 lg:m-4 lg:p-9"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <p className="text-sm font-semibold uppercase tracking-wider text-orange-600">
+              My skills
+            </p>
+            <h3
+              style={{ fontFamily: DISPLAY_FONT }}
+              className="mt-1 text-[3.6rem] font-normal uppercase leading-[0.95] text-black sm:text-[5rem] xl:text-[5.5rem]"
+            >
+              Tech stack
+            </h3>
+
+            {/* Categories */}
+            <div className="mt-6 space-y-4">
+              {categories.map((category) => {
+                const Icon = category.icon;
+                return (
+                  <motion.div
+                    key={category.title}
+                    className="rounded-3xl bg-orange-50/70 p-4 sm:p-5"
+                    variants={rowVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-60px" }}
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500 text-white">
+                          <Icon size={17} />
+                        </span>
+                        <h4 className="text-base font-bold text-black">
+                          {category.title}
+                        </h4>
+                      </div>
+                      <p className="text-xs text-slate-500">{category.note}</p>
+                    </div>
+
+                    <ul className="mt-4 flex flex-wrap gap-2.5">
+                      {category.skills.map((name) => {
+                        const skill = skillsByName[name];
+                        if (!skill) return null;
+
+                        return (
+                          <motion.li
+                            key={skill.name}
+                            variants={tileVariants}
+                            whileHover={{ y: -4 }}
+                            className="group flex w-[4.9rem] flex-col items-center gap-2 rounded-2xl border border-transparent bg-white px-2 py-3 shadow-sm transition-colors duration-300 hover:border-orange-400 hover:shadow-md sm:w-24"
+                          >
+                            <span className="flex h-9 w-9 items-center justify-center transition-transform duration-300 group-hover:scale-110 [&>svg]:h-full [&>svg]:w-full">
+                              {skill.svg}
+                            </span>
+                            <span className="text-center text-[11px] font-medium leading-tight text-slate-700">
+                              {skill.name}
+                            </span>
+                          </motion.li>
+                        );
+                      })}
+                    </ul>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
       </section>
     </MotionConfig>
